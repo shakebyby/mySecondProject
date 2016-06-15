@@ -3,5 +3,5 @@
  */
 define(function (require,exports,module) {
     require("module-tools/Carousel");
-    require("module-tools/navbar");
+    require("module-tools/navBar");
 });

@@ -107,17 +107,17 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="carousel02.html" pinned="false" current-in-tab="true">
+      <file leaf-file-name="carousel02.html" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/carousel02.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="554">
+            <state relative-caret-position="1560">
               <caret line="60" column="7" selection-start-line="60" selection-start-column="7" selection-end-line="60" selection-end-column="7" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="main03.js" pinned="false" current-in-tab="false">
+      <file leaf-file-name="main03.js" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/bus/main03.js">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="87">
@@ -293,6 +293,24 @@
             </PATH_ELEMENT>
             <PATH_ELEMENT>
               <option name="myItemId" value="less" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="mySecondProject" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="mySecondProject" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="src" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="js" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -519,12 +537,12 @@
       <workItem from="1465373063105" duration="3121000" />
       <workItem from="1465697986836" duration="10677000" />
       <workItem from="1465782384779" duration="13862000" />
-      <workItem from="1465956633557" duration="15051000" />
+      <workItem from="1465956633557" duration="15313000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="65615000" />
+    <option name="totallyTimeSpent" value="65877000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1456" height="876" extended-state="6" />
@@ -932,6 +950,14 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/carousel02.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1560">
+          <caret line="60" column="7" selection-start-line="60" selection-start-column="7" selection-end-line="60" selection-end-column="7" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/bus/main03.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="87">
@@ -939,14 +965,6 @@
           <folding>
             <element signature="e#0#49#0" expanded="false" />
           </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/carousel02.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="554">
-          <caret line="60" column="7" selection-start-line="60" selection-start-column="7" selection-end-line="60" selection-end-column="7" />
-          <folding />
         </state>
       </provider>
     </entry>
