@@ -11,7 +11,7 @@ define(function(require,exports,module){
     for(var i=0;i<$lisRound.length;i++){
         console.log($lisRound[i]);
         $($lisRound[i]).bind("click",function(e){
-            var e=event || window.event;
+            var e=e || window.event;
             var target=e.target||e.srcElement;
             e.stopPropagation();
             e.cancelBubble=true;
@@ -21,19 +21,19 @@ define(function(require,exports,module){
     }
     var timer=null;
     function s(){
-        var i=0;
+        var i=1;
         return function () {
             $($lisImg[i]).show(500).siblings().hide();
             i++;
-            if(i==5){
+            if(i==$lisImg.length){
                 i=0;
             }
         }
     }
-    timer=setInterval(s(),2000);
+    timer=setInterval(s(),"1000");
     $(".container-carousel").bind("mouseover",function(e){
         clearInterval(timer);
     }).bind("mouseout",function(e){
-        timer=setInterval(s(),2000);
+        timer=setInterval(s(),"1000");
     });
 });

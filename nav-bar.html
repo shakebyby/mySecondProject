@@ -3,8 +3,40 @@
 <head>
     <meta charset="UTF-8">
     <title>Title</title>
+    <script src="./src/js/jquery-1.11.2.js"></script>
+    <script src="./src/js/sea.js"></script>
+    <script src="./src/config.js"></script>
+    <link rel="stylesheet" href="requireDirReset/css/navbar.css">
+    <style>
+        #index-0,#index-1,#index-2{
+            height:2000px;
+        }
+        #index-0{
+            background-color: #1c86c4;
+        }
+        #index-1{
+            background-color: #58ae76;
+        }
+        #index-2{
+            background-color: #b9c474;
+        }
+    </style>
 </head>
 <body>
-
+<ul class="sf-navbar">
+    <li>
+        <a href="#index-0" data-title="0">第一张</a>
+    </li>
+    <li>
+        <a href="#index-1" data-title="1">第二张</a>
+    </li>
+    <li>
+        <a href="#index-2" data-title="2">第三张</a>
+    </li>
+</ul>
+<div id="index-0"></div>
+<div id="index-1"></div>
+<div id="index-2"></div>
+<script>seajs.use("bus/main04.js")</script>
 </body>
 </html>

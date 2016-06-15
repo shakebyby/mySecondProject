@@ -1,0 +1,1 @@
+!function(){var e={base:"./src/",alias:{jQuery:"js/jQuery",react:"js/react",reactDom:"js/react-dom",reflux:"js/reflux"},path:{bootstrap:"bootstrap"},debug:!0,charset:"utf-8"};return seajs.config(e),"function"==typeof define&&define(function(t,r,a){a.exports=e}),e}();

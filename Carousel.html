@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>ab-Carousel</title>
+    <script src="./src/js/jquery-1.11.2.js"></script>
+    <script src="./src/js/sea.js"></script>
+    <script src="./src/config.js"></script>
+    <link rel="stylesheet" href="requireDirReset/css/carousel.css">
+</head>
+<body>
+    <div class="container-carousel">
+        <div class="carousel-img">
+            <ul>
+                <li>
+                    <a href=""><img src="src/images/banner.png" alt=""></a>
+                </li>
+                <li>
+                    <a href=""><img src="src/images/banner_new.jpg" alt=""></a>
+                </li>
+                <li>
+                    <a href=""><img src="src/images/banner.png" alt=""></a>
+                </li>
+                <li>
+                    <a href=""><img src="src/images/banner_new.jpg" alt=""></a>
+                </li>
+                <li>
+                    <a href=""><img src="src/images/banner.png" alt=""></a>
+                </li>
+            </ul>
+        </div>
+        <div class="carousel-round">
+            <ul>
+                <li data-role="0"></li>
+                <li data-role="1"></li>
+                <li data-role="2"></li>
+                <li data-role="3"></li>
+                <li data-role="4"></li>
+            </ul>
+        </div>
+    </div>
+<script>seajs.use("bus/main02")</script>
+</body>
+</html>

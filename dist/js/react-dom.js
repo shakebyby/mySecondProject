@@ -1,0 +1,1 @@
+define(function(e,n,f){!function(t){if("object"==typeof n&&"undefined"!=typeof f)f.exports=t(e("react"));else if("function"==typeof define&&define.amd)define(["react"],t);else{var i;i="undefined"!=typeof window?window:"undefined"!=typeof global?global:"undefined"!=typeof self?self:this,i.ReactDOM=t(i.React)}}(function(e){return e.__SECRET_DOM_DO_NOT_USE_OR_YOU_WILL_BE_FIRED})});

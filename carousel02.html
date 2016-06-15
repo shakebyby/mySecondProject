@@ -3,8 +3,59 @@
 <head>
     <meta charset="UTF-8">
     <title>Title</title>
+    <script src="./src/js/jquery-1.11.2.js"></script>
+    <script src="./src/js/sea.js"></script>
+    <script src="./src/config.js"></script>
+    <link rel="stylesheet" href="requireDirReset/css/carousel.css">
+    <link rel="stylesheet" href="requireDirReset/css/navbar.css">
+    <style>
+        #index-0{
+            height:1000px;
+            background-color: #ff5b73;
+        }
+        #index-1{
+            height:1000px;
+            background-color: #b9c474;
+        }
+        #index-2{
+            height:1000px;
+            background-color: #5053af;
+        }
+    </style>
 </head>
 <body>
-
+<div class="container-carousel">
+    <div class="carousel-img">
+        <ul>
+            <li>
+                <a href=""><img src="src/images/730e0cf3d7ca7bcbc2868a9bbc096b63f724a881.jpg" alt=""></a>
+            </li>
+            <li>
+                <a href=""><img src="src/images/13.jpg" alt=""></a>
+            </li>
+        </ul>
+    </div>
+    <div class="carousel-round">
+        <ul>
+            <li data-role="0"></li>
+            <li data-role="1"></li>
+        </ul>
+    </div>
+</div>
+<ul class="sf-navbar">
+    <li>
+        <a href="#index-0" data-title="0">奥迪</a>
+    </li>
+    <li>
+        <a href="#index-1" data-title="1">奥迪</a>
+    </li>
+    <li>
+        <a href="#index-2" data-title="2">奥迪</a>
+    </li>
+</ul>
+<div id="index-0"></div>
+<div id="index-1"></div>
+<div id="index-2"></div>
+<script>seajs.use("bus/main03")</script>
 </body>
 </html>

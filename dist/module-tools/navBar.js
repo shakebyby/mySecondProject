@@ -1,0 +1,1 @@
+define(function(a,e,t){var l=a("jQuery");l(function(){l(".sf-navbar>li a").click(function(a){a.stopPropagation(),a.cancelBubble=!0;var e=a.target||a.srcElement;l("ul li a").removeClass("redB"),l(e).addClass("redB");var t=e.getAttribute("data-title");console.log(t);var o="#index-"+t;l("html,body").animate({scrollTop:l(o).offset().top},500)})})});

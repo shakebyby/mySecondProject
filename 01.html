@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        body,html{
+            width:100%;
+            height:100%;
+        }
+        body{
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        .container{
+            width:100px;
+            height:100px;
+            background-color: aquamarine;
+            position:relative;
+            overflow: hidden;
+        }
+        .shaDow{
+            position:absolute;
+            width:100px;
+            height:100px;
+            top:80px;
+            left:0;
+            background-color:rgba(201,21,42,0.3);
+        }
+    </style>
+</head>
+<body>
+<div class="container">
+    <div class="shaDow"></div>
+</div>
+</body>
+<script>
+    (function () {
+        var timer1 = null;
+        var px = 80;
+        var div = document.getElementsByClassName("container")[0];
+        div.onmouseover = file(true);
+        div.onmouseout = file(false);
+        function file(p) {
+            return function () {
+                clearInterval(timer1);
+                timer1 = null;
+                timer1 = setInterval(function () {
+                    if (p) {
+                        px--;
+                        if (px <= 0) {
+                            clearInterval(timer1);
+                            timer1 = null;
+                        }
+                    }
+                    else {
+                        px++;
+                        if (px >= 80) {
+                            clearInterval(timer1);
+                            timer1 = null;
+                        }
+                    }
+                    document.getElementsByClassName("shaDow")[0].style.top = px + 'px';
+                }, 5);
+            }
+        }
+    })();
+</script>
+</html>

@@ -1,0 +1,1 @@
+define(function(e,c,n){e("react"),e("reactDOM"),e("jquery")});

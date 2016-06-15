@@ -1,0 +1,1 @@
+define(function(d,a,e){var h=d("jQuery");d("react"),d("reactDom");h("body").html("<h1>sdsad <h2>sdasd</h2></h1>")});
