@@ -3,8 +3,60 @@
 <head>
     <meta charset="UTF-8">
     <title>Title</title>
+    <script src="./src/js/jquery-1.11.2.js"></script>
+    <script src="./src/js/sea.js"></script>
+    <script src="./src/config.js"></script>
+    <style>
+        *{
+            margin:0;
+            padding:0;
+        }
+        body{
+            text-align:center;
+        }
+        .shadow-father{
+            position:relative;
+            overflow:hidden;
+            width:100px;
+            height:100px;
+            margin:10px;
+            float:left;
+            margin-left:10px;
+        }
+        .shadow-body{
+            width:100px;
+            height:100px;
+            background-color:deepskyblue;
+        }
+        .shadow-comment{
+            position:absolute;
+            background-color:rgba(0,0,0,0.2);
+        }
+    </style>
 </head>
 <body>
+    <section class="shadow-father">
+        <div class="shadow-body"></div>
+        <div class="shadow-comment"></div>
+    </section>
+    <section class="shadow-father">
+        <div class="shadow-body"></div>
+        <div class="shadow-comment"></div>
+    </section>
+    <section class="shadow-father">
+        <div class="shadow-body"></div>
+        <div class="shadow-comment"></div>
+    </section>
+    <section class="shadow-father">
+        <div class="shadow-body"></div>
+        <div class="shadow-comment"></div>
+    </section>
+
+
+
 
 </body>
+<script>
+    seajs.use("bus/main07");
+</script>
 </html>

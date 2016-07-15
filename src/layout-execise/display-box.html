@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>display:box布局</title>
+    <style>
+        .box{
+            display:-webkit-box;
+            width:600px;
+            height:200px;
+            /*用来确定父容器里子容器的排列方式，是水平还是垂直*/
+            /*-webkit-box-orient: horizontal ;*/
+            /*-webkit-box-orient: vertical  ;*/
+            /*-webkit-box-orient: inline-axis ;*/
+            /*-webkit-box-orient: block-axis ;*/
+            /*-webkit-box-orient: inherit ;子元素继承父元素属性*/
+            /*用来确定父容器里的子容器排列顺序*/
+            /*-webkit-box-direction: normal ;*/
+            /*-webkit-box-direction: reverse  ;*/
+            /*-webkit-box-direction: inherit  ;*/
+            /*表示父容器里面子容器的垂直对齐方式*/
+            /*-webkit-box-align:start ;*/
+            /*-webkit-box-align:end  ;*/
+            /*-webkit-box-align:center  ;*/
+            /*-webkit-box-align:baseline  ;*/
+            /*-webkit-box-align:stretch ;*/
+            /*表示父容器里面子容器的水平对齐方式*/
+            /*-webkit-box-pack: start ;*/
+            /*-webkit-box-pack: end  ;*/
+            /*-webkit-box-pack: center  ;*/
+            /*-webkit-box-pack: justify ;*/
+            /*用来决定子元素是可以换行显示*/
+            /*-webkit-box-lines: single ;*/
+            /*-webkit-box-lines: multiple ;*/
+        }
+        .cell01{
+            -webkit-box-flex:1;
+            background-color: #51c1c4;
+        }
+        .cell02{
+            -webkit-box-flex:2;
+            background-color: #ff5b73;
+        }
+        .cell03{
+            -webkit-box-flex:3;
+            background-color: #3ccb88;
+        }
+        .sf-width{
+            width:200px;
+        }
+    </style>
+</head>
+<body>
+    <div class="box">
+        <div class="cell01"></div>
+        <div class="cell02"></div>
+        <div class="cell03"></div>
+    </div>
+</body>
+</html>

@@ -16,24 +16,25 @@ define(function(require,exports,module){
             e.stopPropagation();
             e.cancelBubble=true;
             console.log(target.getAttribute("data-role"));
-           $($lisImg[target.getAttribute("data-role")]).show(500).siblings().hide();
+           $($lisImg[target.getAttribute("data-role")]).fadeIn(500).siblings().hide();
         })
     }
     var timer=null;
     function s(){
         var i=1;
         return function () {
-            $($lisImg[i]).show(500).siblings().hide();
+            $($lisImg[i]).fadeIn(500).siblings().hide();
             i++;
             if(i==$lisImg.length){
                 i=0;
             }
         }
     }
-    timer=setInterval(s(),"1000");
-    $(".container-carousel").bind("mouseover",function(e){
+    timer=setInterval(s(),2000);
+    $(".container-carousel").bind("mouseenter",function(e){
         clearInterval(timer);
-    }).bind("mouseout",function(e){
-        timer=setInterval(s(),"1000");
+        timer=null;
+    }).bind("mouseleave",function(e){
+        timer=setInterval(s(),2000);
     });
 });

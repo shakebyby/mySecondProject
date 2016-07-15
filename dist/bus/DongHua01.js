@@ -1,0 +1,1 @@
+"use strict";define(function(o,f,s){var t=o("jQuery");t(".on-off").on("click",function(o){console.log(t(this).data("onoff")),t(this).data("onoff")?(t(this).find("div").css({left:"48px"}),t(this).css({backgroundColor:"#3ccb88"}),t(this).data("onoff",!1)):(t(this).find("div").css({left:0}),t(this).css({backgroundColor:"#ff4256"}),t(this).data("onoff",!0))})});

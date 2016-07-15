@@ -3,8 +3,35 @@
 <head>
     <meta charset="UTF-8">
     <title>Title</title>
+    <script src="./src/js/jquery-1.11.2.js"></script>
+    <script src="./src/js/sea.js"></script>
+    <script src="./src/config.js"></script>
+    <style>
+        .shadow-body{
+            width:1000px;
+            height:200px;
+            position:relative;
+            overflow: hidden;
+        }
+        .shadow{
+            position:absolute;
+            width:1000px;
+            height:200px;
+            top:140px;
+            left:0;
+            background-color:rgba(0,0,0,0.3);
+            color:#fff;
+        }
+    </style>
 </head>
 <body>
+<div class="shadow-body">
+    <img src="src/images/13.jpg" alt="">
+    <div class="shadow">
+        <p id="p1">Lorem <a href="">sssssssss</a> ipsum dolor sit amet, consectetur adipisicing elit. A, ab accusamus autem consequatur corporis dignissimos ea, eaque esse eveniet nam nulla officia praesentium quis saepe temporibus tenetur unde ut voluptates.</p>
+    </div>
+</div>
 
+<script>seajs.use("bus/main05.js")</script>
 </body>
 </html>

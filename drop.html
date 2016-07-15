@@ -2,9 +2,26 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Title</title>
+    <title>drop</title>
+    <script src="./src/js/jquery-1.11.2.js"></script>
+    <script src="./src/js/sea.js"></script>
+    <script src="./src/config.js"></script>
+    <style>
+        html,body{
+            margin:0;
+            padding:0;
+        }
+        .box{
+            position:absolute;
+            width:200px;
+            height:200px;
+            background-color: #ff5b73;
+        }
+    </style>
 </head>
 <body>
+    <div class="box"></div>
 
+    <script>seajs.use(["bus/drop"]);</script>
 </body>
 </html>

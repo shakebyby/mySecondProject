@@ -1,1 +1,1 @@
-define(function(o,e,l){o("module-tools/Carousel"),o("module-tools/navbar")});
+define(function(o,s,l){o("module-tools/Carousel"),o("module-tools/navBar");var a=o("module-tools/sfshadow");a.shadow({px:250,ss:1})});

@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>圣杯布局</title>
+    <style>
+        body{
+            background-color:#fff;
+            font-size:14px;
+        }
+        h1{
+            color:tomato;
+        }
+        h2{
+            color: #f583bd;
+        }
+        div,section{
+            padding:0;
+            margin:0;
+            box-sizing: border-box;
+        }
+        p{
+            padding:10px;
+            text-align: center;
+            color:#fff;
+        }
+        .fl{
+            float:left;
+        }
+        .fr{
+            float:right;
+        }
+        /*左侧栏固定宽度，右侧自适应*/
+        .sf-lf{
+            background-color: rgb(81, 193, 196);
+        }
+        .sf-main{
+            background-color: rgb(255, 91, 115);
+        }
+        .sf-rt{
+            background-color: rgb(60, 203, 136);
+        }
+        .container01{
+            padding-left:200px;
+            min-width:400px;
+        }
+        .container01 .sf-lf{
+            width:200px;
+            margin-left:-100%;
+            position:relative;
+            left:-200px;
+        }
+        .container01 .sf-main{
+            width:100%;
+        }
+        .container01:after{
+            content:" ";
+            display: table;
+            clear:both;
+        }
+        /*右侧栏固定，左侧栏自适应*/
+        .container02{
+            padding-right:200px;
+            overflow:hidden;
+            min-width:400px;
+        }
+        .container02 .sf-main{
+            width:100%;
+        }
+        .container02 .sf-rt{
+            width:200px;
+            /*margin-left:-200px;*/
+            /*position: relative;*/
+            /*left:200px;*/
+            margin-right:-200px;
+        }
+        /* 左中右 三栏自适应 */
+        .container03{
+            padding:0 200px 0 200px;
+            overflow: hidden;
+            min-width:600px;
+        }
+        .container03 .sf-main{
+            width:100%;
+        }
+        .container03 .sf-lf{
+            width:200px;
+            margin-left:-100%;
+            position: relative;
+            left:-200px;
+        }
+        .container03 .sf-rt{
+            width:200px;
+            /*margin-left: -200px;*/
+            /*position:relative;*/
+            /*right: -200px;*/
+            margin-right:-200px;
+        }
+        /*都在左边，右侧栏自适应*/
+        .container04{
+            padding-left:400px;
+            overflow: hidden;
+            min-width:600px;
+        }
+        .container04 .sf-main{
+            width:100%;
+        }
+        .container04 .sf-lf{
+            width:200px;
+            margin-left:-100%;
+            position: relative;
+            left:-400px;
+        }
+        .container04 .sf-rt{
+            width:200px;
+            margin-left:-100%;
+            position: relative;
+            left:-200px;
+        }
+        /*都在左边，右侧栏自适应*/
+        .container05{
+            overflow:hidden;
+            padding-right:400px;
+            min-width:600px;
+        }
+        .container05 .sf-main{
+            width:100%;
+        }
+        .container05 .sf-lf{
+            width:200px;
+            /*margin-left:-200px;*/
+            /*position: relative;*/
+            /*left:200px;*/
+            margin-right:-200px;
+        }
+        .container05 .sf-rt{
+            width:200px;
+            margin-left:-400px;
+            position:relative;
+            left:600px;
+        }
+        /*三栏式方法2*/
+        .container06{
+            overflow:hidden;
+            min-width:600px;
+        }
+        .container06 .sf-lf{
+            width:200px;
+            margin-right:-200px
+        }
+        .container06 .sf-rt{
+            width:200px;
+            margin-left:-200px;
+        }
+        .container06 .sf-main{
+             margin:0 200px;
+            overflow: hidden;
+         }
+    </style>
+</head>
+<body>
+    <h1>圣杯布局 </h1>
+    <h2>左侧栏固定宽度，右侧自适应</h2>
+    <div class="container01">
+        <div class="sf-main fl"><p>右侧栏</p></div>
+        <div class="sf-lf fl"><p>左侧栏</p></div>
+    </div>
+    <h2>右侧栏固定，左侧栏自适应</h2>
+    <div class="container02">
+        <div class="sf-main fl"><p>左侧栏</p></div>
+        <div class="sf-rt fl"><p>右侧栏</p></div>
+    </div>
+    <h2>左右两栏固定，中间自适应</h2>
+    <div class="container03">
+        <div class="sf-main fl"><p>中间栏</p></div>
+        <div class="sf-lf fl"><p>左栏</p></div>
+        <div class="sf-rt fl"><p>右栏</p></div>
+    </div>
+    <h2>都在左边，右侧栏自适应</h2>
+    <div class="container04">
+        <div class="sf-main fl"><p>右侧栏</p></div>
+        <div class="sf-lf fl"><p>左侧栏一</p></div>
+        <div class="sf-rt fl"><p>左侧栏二</p></div>
+    </div>
+    <h2>都在右边，左侧栏自适应</h2>
+    <div class="container05">
+        <div class="sf-main fl"><p>左侧栏</p></div>
+        <div class="sf-lf fl"><p>右侧栏一</p></div>
+        <div class="sf-rt fl"><p>右侧栏二</p></div>
+    </div>
+
+
+</body>
+</html>

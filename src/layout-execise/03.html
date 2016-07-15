@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>三栏式布局</title>
+    <style>
+        div,section,p{
+            padding:0;
+            margin:0;
+            box-sizing: border-box;
+            -webkit-box-sizing: border-box;
+            -moz-box-sizing: border-box;
+            -o-box-sizing:border-box;
+            -ms-box-sizing:border-box;
+        }
+        .sf-main{
+            background-color: #cccccc;
+            min-width:600px;
+        }
+        .sf-main:after{
+            content: " ";
+            display: table;
+            clear:both;
+        }
+        .sf-fl{
+            float:left;
+        }
+        .sf-fr{
+            float:right;
+        }
+        .sf-dib{
+            display: inline-block;
+        }
+        .sf-pr{
+            position:relative;
+        }
+        .sf-taj{
+             text-align: justify;
+        }
+        .main-left{
+            width:200px;
+            padding:10px;
+            background-color: #f583bd;
+            margin-right:-200px;
+        }
+        .main-right{
+            width:200px;
+            padding:10px;
+            min-width:50px;
+            background-color:#3ccb88;
+            margin-left:-200px;
+        }
+        .main-center{
+            padding:5px;
+            background-color: #43a5eb;
+            margin:0 200px;
+            overflow: hidden;
+        }
+        .pos-left{
+            width:200px;;
+            background-color: #f583bd;
+        }
+        .pos-center{
+            background-color:#3ccb88;
+        }
+        .pos-right{
+            width:200px;
+            background-color: #43a5eb;
+        }
+    </style>
+
+
+</head>
+<body>
+<!--float实现-->
+<div class="sf-main">
+    <section class="main-left sf-fl">asdasdaaa Lorem ipsum dolor sit amet, consectetur adipisicing elit. Adipisci beatae delectus dolores ex modi mollitia natus repudiandae! Blanditiis doloribus nam quos sed. Aspernatur doloremque ea eius est quos rem sequi?</section>
+    <section class="main-center sf-fl sf-taj">
+        Lorem ipsum dolor sit amet, consectetur adipisicing elit. Earum eum fugiat incidunt iure, molestiae perspiciatis sed unde. Accusamus aspernatur aut fuga hic in inventore, iure provident quis reiciendis reprehenderit similique.
+    </section>
+    <section class="main-right sf-fl sf-taj">
+        <div>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ducimus in ipsum iusto odio, perspiciatis quam
+            sunt? Aspernatur delectus eligendi eveniet officia provident quia quisquam repellat! Assumenda atque dolore
+            illo voluptate. Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aliquid at deserunt dolor doloremque dolorum exercitationem hic illo inventore, itaque mollitia nam necessitatibus nobis qui quod sit tempore tenetur velit voluptas?
+        </div>
+    </section>
+</div>
+<!--position实现-->
+<br>
+<div class="sf-main">
+    <section class="pos-left sf-pr sf-dib">sss Lorem ipsum dolor sit amet, consectetur adipisicing elit. Culpa ducimus, eaque exercitationem labore maxime molestiae nihil odit sunt voluptate. Alias eaque esse excepturi minus numquam odio quo repellendus, sapiente similique?</section>
+    <section class="pos-center sf-pr sf-dib">sss Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ad aspernatur at consectetur consequuntur corporis earum est fugiat, impedit laborum magnam maxime natus odit porro quidem rem sint tempore veniam, vitae. Lorem ipsum dolor sit amet, consectetur adipisicing elit. Maiores minima molestiae nisi saepe? Aliquam beatae consequatur modi numquam optio sequi tempore vel velit, voluptates! Adipisci dolorem impedit maxime odit repellat?</section>
+    <section class="pos-right sf-pr sf-dib">sss</section>
+</div>
+<!--position实现失败-->
+
+
+
+
+</body>
+</html>

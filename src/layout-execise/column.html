@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>CSS3多列布局(columns)的用法</title>
+    <style>
+       body,html{
+           margin:0;
+           padding:0;
+       }
+       .sf-columns{
+           padding:10px;
+           background-color: #ddd;
+           color:#000000;
+           font-weight: 700;
+           /*column-count: 5;*/
+            /*column-width: 100px;*/
+            columns:4 100px;
+           /*column-gap: 1em;默认*/
+            column-gap: 5em;
+            column-rule:10px solid #090;
+       }
+        .sf-column-span{
+            /*column-span: none;*/
+            column-span: all;
+            color: #51c1c4;
+        }
+        .sf-column-fill{
+            /*列高度自适应内容*/
+            /*column-fill: auto;*/
+            /*column-fill: auto;*/
+            /*所有列的高度以其中最高的一列统一*/
+            column-fill:balance;
+        }
+        .sf-column-break-before{
+            /*-webkit-column-break-before: auto;*/
+            /*总是在元素之前断行并产生新列*/
+            -webkit-column-break-before: always;
+            /*避免在元素之前断行并产生新列*/
+            /*-webkit-column-break-before: avoid;*/
+        }
+       .sf-column-break-after{
+
+       }
+       .sf-column-break-inside{
+
+       }
+    </style>
+    <!–[if lt IE 8]>
+    <script src="http://ie7-js.googlecode.com/svn/version/2.0(beta)/IE8.js " type="text/javascript">
+    </script>
+    <![endif]–>
+
+</head>
+<body>
+    <div class="sf-columns sf-column-fill">
+        <div>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Accusantium eius id illum in ipsa necessitatibus
+            provident. Adipisci est fuga nesciunt officia optio quia reiciendis totam vel! Ab iste possimus
+            reprehenderit?
+        </div>
+        <div class="">Accusamus ad commodi consectetur cupiditate est eum exercitationem impedit ipsa iusto magnam, minima
+            molestias mollitia nobis non perferendis quam quia quo reprehenderit sequi vel. Accusamus consequatur
+            inventore possimus quod sapiente!
+        </div>
+        <div>Alias, aliquid atque aut debitis dignissimos error esse et fugit iure mollitia natus, nostrum nulla
+            obcaecati officia officiis porro provident quas quasi quod reiciendis repellendus rerum sapiente velit vero
+            voluptates.
+        </div>
+        <div>Ad aspernatur corporis cumque distinctio dolore doloribus ea enim explicabo facere harum magni officiis
+            possimus praesentium quis quisquam recusandae similique ut, veritatis voluptate voluptatibus! Commodi
+            distinctio illo reiciendis soluta. Fugit!
+        </div>
+        <div class="sf-column-break-before">Aliquam blanditiis culpa deserunt doloremque eos eum minima modi reprehenderit voluptatum. Assumenda eos
+            est fuga ipsum, laboriosam necessitatibus recusandae repudiandae sapiente voluptate voluptatibus.
+            Dignissimos et exercitationem nesciunt pariatur, tempora veniam.
+        </div>
+        <div>Assumenda deleniti dicta magnam nostrum porro rerum vero vitae voluptatibus. Aperiam at, cumque delectus
+            doloribus iste iure minima neque rem tempore, ut veniam vero. Incidunt nam pariatur sint tenetur velit!
+        </div>
+        <div>Cumque fuga maxime neque odio quis? Alias assumenda deleniti doloribus eligendi esse eum nihil numquam
+            officiis quaerat quas, qui rem vel. Eos ipsam itaque minima modi neque nulla quae soluta.
+        </div>
+        <div>Debitis minima omnis quae sed? A ad at aut, ducimus est facere nam optio reiciendis rem veritatis.
+            Architecto dolorem, esse illo impedit laudantium libero, magni molestias natus necessitatibus, nemo soluta?
+        </div>
+        <div>Accusantium ad aspernatur, at blanditiis dolorem dolores expedita id illo incidunt inventore ipsa
+            laboriosam magni minima minus odio optio pariatur possimus quae quos reiciendis rerum sapiente sequi sit
+            tempora vitae.
+        </div>
+        <div>Consectetur dicta earum labore, necessitatibus numquam quasi quis sit vel. Distinctio enim impedit ipsa
+            laborum sed! Ab commodi eius ipsum nobis non ratione. Eum exercitationem incidunt laudantium maiores
+            voluptas, voluptate.
+        </div>
+    </div>
+
+
+</body>
+</html>

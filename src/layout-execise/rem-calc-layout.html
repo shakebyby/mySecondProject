@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>rem-calc适配</title>
+    <style>
+        html,body{
+            margin:0;
+            padding:0;
+        }
+        @media  (min-width:375px){
+            html{
+                font-size:calc(100vw/3.75);
+            }
+        }
+        @media  (min-width:414px){
+            html{
+                font-size:calc(100vw/4.14);
+            }
+        }
+        @media  (min-width:320px){
+            html{
+                font-size:calc(100vw/3.20);
+            }
+        }
+        html{
+            min-width:320px;
+            max-width:580px;
+        }
+        h1{
+            color:tomato;
+            font-size:0.16rem;
+        }
+    </style>
+</head>
+<body>
+    <h1>rem适配</h1>
+    <h2>
+        iphone4,5:320px <br>
+        iphone6:375px <br>
+        iphone6-plus:414px <br>
+    </h2>
+    <p>
+        一、rem的适用性很有局限，仅仅只能够用于只在移动端展示的页面。如果你的
+        页面还需要适配到pc端，那么就老老实实的使用px吧。
+
+        二、自己只是用来放在移动端的页面，别人却在pc上打开了，因此可以设
+        置一个html的最大宽度与最小宽度。580px就是手机上浏览器的最大宽度。
+    </p>
+
+    <script>
+
+    </script>
+</body>
+</html>

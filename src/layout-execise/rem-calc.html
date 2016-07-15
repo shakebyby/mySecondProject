@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>rem-calc适配</title>
+    <style>
+        /*方法一*/
+        /*div{*/
+            /*box-sizing: border-box;*/
+        /*}*/
+        html{
+
+        }
+        .demo {
+            width: 300px;
+            background: #60f;
+            padding:10px;
+            margin:auto;
+        }
+        .box {
+            background: #f60;
+            height: 50px;
+            padding: 10px;
+            border: 5px solid green;
+        }
+        .container{
+            margin:auto;
+            width:calc(100% - 100px);
+            height:100%;
+            background-color: #b9c474;
+        }
+    </style>
+</head>
+<body>
+    <div class="demo">
+        <div class="box"></div>
+    </div>
+
+</body>
+</html>

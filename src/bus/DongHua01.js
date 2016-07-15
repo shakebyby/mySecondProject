@@ -1,0 +1,25 @@
+"use strict";
+
+define(function (require, exports, module) {
+    var $ = require("jQuery");
+    $(".on-off").on("click", function (e) {
+        console.log($(this).data("onoff"));
+        if ($(this).data("onoff")) {
+            $(this).find("div").css({
+                left: 48 + "px"
+            });
+            $(this).css({
+                backgroundColor: "#3ccb88"
+            });
+            $(this).data("onoff", false);
+        } else {
+            $(this).find("div").css({
+                left: 0
+            });
+            $(this).css({
+                backgroundColor: "#ff4256"
+            });
+            $(this).data("onoff", true);
+        }
+    });
+});

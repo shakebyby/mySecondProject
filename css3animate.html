@@ -3,8 +3,207 @@
 <head>
     <meta charset="UTF-8">
     <title>Title</title>
+    <style>
+        .sf-fl{
+            float:left;
+        }
+        .sf-fr{
+            float:right;
+        }
+        .sf-dis-inline{
+            display: inline-block;
+        }
+        .sf-dis-block{
+            display: block;
+        }
+        .sf-dis-none{
+            display: none;
+        }
+        .sf-btn{
+            padding:10px;
+            border-radius:5px;
+            color:#FFFFFF;
+        }
+        .sf-bg-danger{
+            background-color: #ff4256;
+        }
+        .sf-w50{
+            width:50px;
+        }
+        .sf-h50{
+            height:50px;
+        }
+        .sf-bg-success{
+            background-color: #3ccb88;
+            border-radius:50%;
+            box-sizing: border-box;
+            position:relative;
+        }
+        .sf-bg-waring{
+            background-color: #e8df1b;
+        }
+        .sf-bg-info{
+            background-color: #43a5eb;
+        }
+        .silde:hover{
+            animation: silde 0.5s;
+        }
+        .animated {
+            animation-duration: 1s;
+            animation-fill-mode: both;
+        }
+        @keyframes silde {
+            0%{
+                transform:scale(1);
+                opacity: 1;
+            }
+            25%{
+                transform:scale(0.8);
+            }
+            50%{
+                transform:scale(1);
+                opacity: 0.5;
+            }
+            75%{
+                transform:scale(1.2);
+            }
+            100%{
+                transform:scale(1);
+                opacity: 1;
+            }
+        }
+        @keyframes sildeTop {
+            0%{
+               transform:rotate(0deg);
+                left:0;
+            }
+            50%{
+                transform:rotate(720deg);
+                left:100px;
+            }
+            100%{
+                transform:rotate(0deg);
+                left:0;
+            }
+        }
+        .sildetop:hover{
+            animation:sildeTop 2s
+        }
+        @keyframes rubberBand {
+            from {
+                transform: scale3d(1, 1, 1);
+                opacity:0;
+            }
+
+            30% {
+                transform: scale3d(1.25, 0.75, 1);
+            }
+
+            40% {
+                transform: scale3d(0.75, 1.25, 1);
+            }
+
+            50% {
+                transform: scale3d(1.15, 0.85, 1);
+                opacity:0.5;
+            }
+
+            65% {
+                transform: scale3d(.95, 1.05, 1);
+            }
+
+            75% {
+                transform: scale3d(1.05, .95, 1);
+            }
+
+            to {
+                transform: scale3d(1, 1, 1);
+                opacity:1;
+            }
+        }
+        /* Float Shadow */
+        .hvr-float-shadow {
+            display: inline-block;
+            vertical-align: middle;
+            -webkit-transform: translateZ(0);
+            transform: translateZ(0);
+            box-shadow: 0 0 1px rgba(0, 0, 0, 0);
+            -webkit-backface-visibility: hidden;
+            backface-visibility: hidden;
+            -moz-osx-font-smoothing: grayscale;
+            position: relative;
+            -webkit-transition-duration: 0.3s;
+            transition-duration: 0.3s;
+            -webkit-transition-property: transform;
+            transition-property: transform;
+        }
+        .hvr-float-shadow:before {
+            pointer-events: none;
+            position: absolute;
+            z-index: -1;
+            content: '';
+            top: 100%;
+            left: 5%;
+            height: 10px;
+            width: 90%;
+            opacity: 0;
+            background: -webkit-radial-gradient(center, ellipse, rgba(0, 0, 0, 0.35) 0%, rgba(0, 0, 0, 0) 80%);
+            background: radial-gradient(ellipse at center, rgba(0, 0, 0, 0.35) 0%, rgba(0, 0, 0, 0) 80%);
+            /* W3C */
+            -webkit-transition-duration: 0.3s;
+            transition-duration: 0.3s;
+            -webkit-transition-property: transform, opacity;
+            transition-property: transform, opacity;
+        }
+        .hvr-float-shadow:hover, .hvr-float-shadow:focus, .hvr-float-shadow:active {
+            -webkit-transform: translateY(-5px);
+            transform: translateY(-5px);
+            /* move the element up by 5px */
+        }
+        .hvr-float-shadow:hover:before, .hvr-float-shadow:focus:before, .hvr-float-shadow:active:before {
+            opacity: 1;
+            -webkit-transform: translateY(5px);
+            transform: translateY(5px);
+            /* move the element down by 5px (it will stay in place because it's attached to the element that also moves up 5px) */
+        }
+        .rubberBand{
+            animation-name: rubberBand;
+        }
+    </style>
 </head>
 <body>
+    <button class="sf-btn sf-bg-danger sf-dis-block silde">DANGER</button>
+    <button class="sf-btn sf-bg-success sf-dis-block sf-w50 sf-h50 sildetop">5</button>
+    <button class="sf-btn sf-bg-waring sf-dis-block animated rubberBand" id="btn">WARING</button>
+    <button class="sf-btn sf-bg-info sf-dis-block hvr-float-shadow">INFO</button>
+    <p id="p" class="sf-bg-danger sf-dis-none animated rubberBand">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Architecto aut delectus dignissimos ea error fugit illo labore laboriosam libero molestiae molestias nesciunt odit optio porro provident repudiandae, sed. Error, reprehenderit?</p>
+    <script>
+        "use strict";
+        function $(id){
+            return document.getElementById(id);
+        }
+        var i=true;
+        $("btn").onclick=function(){
+            if(i){
+                $("p").className="rubberBand sf-bg-danger sf-dis-block animated";
+                i=false;
+            }else{
+                $("p").className="sf-bg-danger sf-dis-none animated rubberBand";
+                i=true;
+            }
+        }
+        var sope="global";
+        function s(){
+            var sope="local";
+            function b(){
+                var sope="nested";
+                return sope;
+            }
+            return b();
+        }
+        console.log(s());
 
+
+    </script>
 </body>
 </html>

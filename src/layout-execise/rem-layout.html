@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1.0,maximum-scale=1.0,minimum-scale=1.0,user-scalable=no" />
+    <title>rem响应式页面布局</title>
+    <style>
+        body,html,section,div{
+            margin:0;
+            padding:0;
+            box-sizing: border-box;
+        }
+        html{
+            /*font-size:10px;*/
+            /*font-size:40px;*/
+            font-size:10px;
+        }
+        div{
+            width:10rem;
+            height:20rem;
+            background-color: #3ccb88;
+        }
+        h1{
+            color:tomato;
+        }
+        .btn {
+            width: 6rem;
+            height: 3rem;
+            line-height: 3rem;
+            font-size: 1.2rem;
+            display: inline-block;
+            background: #06c;
+            color: #fff;
+            border-radius: .5rem;
+            text-decoration: none;
+            text-align: center;
+            cursor: pointer;
+            outline: none;
+        }
+
+    </style>
+</head>
+<body>
+<div></div>
+<button class="btn">确定</button>
+
+
+<script>
+
+    (function (doc, win) {
+        var docEl = doc.documentElement,
+                resizeEvt = 'orientationchange' in window ? 'orientationchange' : 'resize',
+                recalc = function () {
+                    var clientWidth = docEl.clientWidth;
+                    if (!clientWidth) return;
+                    docEl.style.fontSize = 20 * (clientWidth / 320) + 'px';
+                };
+
+        if (!doc.addEventListener) return;
+        win.addEventListener(resizeEvt, recalc, false);
+        doc.addEventListener('DOMContentLoaded', recalc, false);
+    })(document, window);
+
+</script>
+</body>
+</html>

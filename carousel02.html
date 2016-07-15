@@ -21,6 +21,22 @@
             height:1000px;
             background-color: #5053af;
         }
+        .shadow-body{
+            width:1000px;
+            height:300px;
+            position:relative;
+            background-color:red;
+            overflow: hidden;
+        }
+        .shadow{
+            position:absolute;
+            width:1000px;
+            height:300px;
+            top:250px;
+            left:0;
+            background-color:rgba(0,0,0,0.3);
+            color:#fff;
+        }
     </style>
 </head>
 <body>
@@ -42,20 +58,28 @@
         </ul>
     </div>
 </div>
-<ul class="sf-navbar">
-    <li>
-        <a href="#index-0" data-title="0">奥迪</a>
-    </li>
-    <li>
-        <a href="#index-1" data-title="1">奥迪</a>
-    </li>
-    <li>
-        <a href="#index-2" data-title="2">奥迪</a>
-    </li>
-</ul>
-<div id="index-0"></div>
-<div id="index-1"></div>
-<div id="index-2"></div>
+<div id="good">
+    <ul class="sf-navbar">
+        <li>
+            <a href="#index-0" data-title="0">奥迪</a>
+        </li>
+        <li>
+            <a href="#index-1" data-title="1">奥迪</a>
+        </li>
+        <li>
+            <a href="#index-2" data-title="2">奥迪</a>
+        </li>
+    </ul>
+    <div id="index-0"></div>
+    <div id="index-1"></div>
+    <div id="index-2"></div>
+</div>
+<div class="shadow-body">
+    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Atque, cupiditate, deleniti ducimus excepturi ipsa ipsam iusto minus modi natus nulla quidem rem rerum sequi sunt ut. Aliquam cum eos illum.</p>
+    <div class="shadow">
+        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aperiam at autem, debitis delectus, deserunt enim est eveniet ex explicabo facere illo in iusto libero molestiae, mollitia obcaecati odio quam sapiente?</p>
+    </div>
+</div>
 <script>seajs.use("bus/main03")</script>
 </body>
 </html>
