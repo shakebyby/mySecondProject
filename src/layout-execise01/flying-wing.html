@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>双飞翼布局</title>
+    <style>
+        body{
+            background-color: #ffffff;
+            font-size:14px;
+        }
+        div{
+            margin:0;
+            padding:0;
+            box-sizing:border-box;
+        }
+        h1{
+            color: tomato;
+        }
+        h2{
+            color: #5053af;
+        }
+        p{
+            padding:10px;
+            text-align: center;
+            color:#fff;
+        }
+        .fl{
+            float:left;
+        }
+        .fr{
+            float:right;
+        }
+        .sf-lf{
+            background-color: rgb(81, 193, 196);
+        }
+        .sf-main{
+            background-color: rgb(255, 91, 115);
+        }
+        .sf-rt{
+            background-color: rgb(60, 203, 136);
+        }
+        /*三栏式布局*/
+        .container01{
+            overflow: hidden;
+        }
+        .container01 .sf-main{
+            width:100%;
+        }
+        .container01 .sf-lf{
+            width:200px;
+            margin-left:-100%;
+        }
+        .container01 .sf-rt{
+            width:200px;
+            margin-left:-200px;
+        }
+        .container01 .sf-warp{
+            margin:0 200px;
+        }
+        .s{
+            width:100px;
+            border:1px solid black;
+        }
+        .sercise{
+            /*word-break:  属性规定自动换行的处理方法;*/
+            /*word-break: normal; IE6中不换行 默认*/
+            /*word-break: break-all;允许在单词内换行 火狐无用*/
+            /*word-break: keep-all;只能在半角空格或连字符处换行。 连中文也无用*/
+            /*word-wrap: 属性允许长单词或 URL 地址换行到下一行*/
+            /*word-wrap: normal;IE6中不换行 只在允许的断字点换行（浏览器保持默认处理）默认*/
+            /*word-wrap: break-word;兼容到IE6,适用性很好 在长单词或 URL 地址内部进行换行。*/
+            /*white-space: 属性设置如何处理元素内的空白;*/
+            /*white-space: normal;*/
+            /*默认*/
+            /*white-space: pre;除了IE6，其他浏览器各种情溢出，IE6中全部撑开 空白会被浏览器保留。其行为方式类似 HTML 中的 <pre> 标签。*/
+            /*white-space:nowrap;功能更pre一样 文本不会换行，文本会在在同一行上继续，直到遇到 <br> 标签为止。*/
+            /*white-space: pre-wrap;*/
+            /*保留空白符序列，但是正常地进行换行。*/
+            /*white-space:pre-line;合并空白符序列，但是保留换行符。*/
+            /*white-space:inherit;规定应该从父元素继承 white-space 属性的值。*/
+            /*white-space:inherit;*/
+        }
+        /*左右同高度*/
+        .container02{
+            width:100%;
+            overflow: hidden;
+        }
+        .container02:after{
+            content: " ";
+            display: table;
+            clear:both;
+        }
+        .container02 .sf-lf{
+            width:100px;
+            margin-bottom:-5000px; padding-bottom:5000px
+        }
+        .container02 .sf-rt{
+            width:400px;
+            margin-bottom:-3000px; padding-bottom:3000px
+        }
+        /*左右同高度方法2*/
+        .container03{
+            width:100%;
+            background:url("../images/13.jpg")  repeat 300px;
+            overflow: hidden;
+        }
+        .container03 .sf-lf{
+            width:300px;
+        }
+        .container03 .sf-rt{
+            width:calc(100% - 300px)
+        }
+    </style>
+
+</head>
+<body>
+    <h1>双飞翼布局 <a href="http://www.ui3g.com/uploadfile/grids_test1.html" target="_blank">
+        双飞翼布局汇总</a></h1>
+    <h3>三栏式布局，中间固定,两边自适应</h3>
+    <h2>问题1：main中没有内容，问什么效果会消失？</h2>
+    <h2>问题2：如何强制换行？（word-break、word-wrap、white-space）</h2>
+    <div class="container01">
+        <div class="sf-main fl">
+            <div class="sf-warp">
+                <p>asdasdada asda 我爱的电视剧和看屌丝都</p>
+            </div>
+        </div>
+        <div class="sf-lf fl"><p class="sercise">我爱的电视剧和看屌丝都我爱的电视剧和看屌丝都我爱的电视剧和看屌丝都</p></div>
+        <div class="sf-rt fl"><p>右边</p></div>
+    </div>
+    <h1><a href="http://css.doyoe.com/" target="_blank">CSS/CSS3完整手册（含浏览器兼容性问题）</a></h1>
+    <h1>左右高度自适应问题</h1>
+    <div class="container02">
+        <div class="sf-lf fl"><p>Lorem  r consequuntur nobis officia perferendis, quasi! Consequuntur cumque dolore doloremque ducimus nostrum quidem repellendus sapiente unde. Reprehenderit.</p></div>
+        <div class="sf-rt fl"><p>asdasd dad <span>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Eius fugiat harum hic impedit iste laborum libero quam soluta ullam, voluptates. Eum, sequi, voluptatem! Assumenda error ipsam maxime quae ullam voluptatem!</span><span>A adipisci aspernatur assumenda atque commodi, deleniti dicta dolorum enim esse ex expedita facere fuga ipsa iure laboriosam laudantium maiores minima nam perferendis quo reprehenderit sed, soluta tenetur ullam vitae?</span><span>Asperiores autem dolorem, exercitationem illum impedit ipsa laborum magnam maxime obcaecati qui quia quisquam totam unde. Eveniet explicabo ipsa nostrum qui recusandae soluta tempore! Culpa et harum hic soluta unde.</span><span>Deserunt dolorum magni maiores nemo nihil placeat tempore. Ad aliquam architecto debitis delectus deleniti doloremque dolores est eveniet ex facere, fugit laboriosam natus quaerat quos, reiciendis, repellat repellendus saepe sint?</span> Lorem ipsum dolor sit amet, consectetur adipisicing elit. Accusantium ad, amet assumenda autem dicta dolore ea eius, eos fugiat harum in iste nemo nisi saepe sed, totam ut voluptatem. Excepturi. Lorem ipsum dolor sit amet, consectetur adipisicing elit. Blanditiis consequuntur fugiat saepe ut. Amet consectetur cumque id modi nisi pariatur provident quibusdam quisquam! A accusamus autem earum ipsam nam ullam.</p></div>
+    </div>
+    <h1>左右高度自适应问题 方法2</h1>
+    <div class="container03">
+        <div class="sf-lf fl"> 左栏 Lorem ipsum dolor sit amet, consectetur adipisicing elit. Molestias quasi, reprehenderit. Accusamus adipisci assumenda blanditiis consequatur dicta dolor dolorem, illo incidunt optio quis ratione, recusandae, repellat similique ullam vero voluptas.asdasd Lorem ipsum dolor sit amet, consectetur adipisicing elit. Commodi eum in incidunt magnam minus mollitia officiis quas, quisquam. Asperiores aspernatur aut eaque eum labore magnam optio provident quo ratione vero.</div>
+        <div class="sf-rt fl"> 右栏 lorem</div>
+    </div>
+</body>
+</html>

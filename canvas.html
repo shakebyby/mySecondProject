@@ -1,0 +1,452 @@
+<!DOCTYPE html>
+
+
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>canvas</title>
+    <script src="./src/js/jquery-1.11.2.js"></script>
+    <script src="./src/js/sea.js"></script>
+    <script src="./src/config.js"></script>
+    <style>
+        body{
+            text-align: center;
+        }
+        h1{
+            margin:0;
+            padding:0;
+        }
+        .sf-btn{
+            display: inline-block;
+            padding:15px;
+            position: relative;
+            font-size:24px;
+            background-color: #51c1c4;
+            color:#000000;
+            border-radius:10px;
+            outline: none;
+            top:0;
+            transition: all 0.5s;
+            margin-top:20%;
+        }
+        .sf-btn span{
+            display: inline-block;
+            position: relative;
+            transition: all 0.5s;
+        }
+        .sf-btn span:after{
+            content:"CLICK";
+            position: absolute;
+            left:0;
+            color: #fff;
+            display: inline-block;
+            transform: rotate3d(1,1,0,90deg);
+            transition: all 0.5s;
+        }
+        .sf-btn:hover span{
+            transform:rotate3d(0,1,0,0deg);
+            color:#fff;
+        }
+        .sf-btn:hover span:after{
+            transform: rotate3d(0,0,0,-90deg);
+        }
+
+
+        .sf-float-shadow{
+            position: relative;
+            transition: all 0.5s;
+        }
+        .sf-float-shadow:before{
+            content:'';
+            position: absolute;
+            width:90%;
+            height:10px;
+            z-index: -1;
+            opacity: 0;
+            top:100%;
+            left:5%;
+            background: radial-gradient(ellipse at center, rgba(0, 0, 0, 0.40) 0%, rgba(0, 0, 0, 0) 80%);
+            transition: all 0.5s;
+        }
+        .sf-float-shadow:hover{
+            transform: translateY(-10px);
+        }
+        .sf-float-shadow:hover:before{
+            opacity: 1;
+            transform: translateY(10px);
+        }
+
+
+
+        .sf-up{
+            position: relative;
+            width:400px;
+            transition: all 0.5s;
+        }
+        .sf-up-main{
+            width:400px;
+            height:400px;
+            background-color: #43a5eb;
+        }
+        .sf-up-next{
+            height:50px;
+            width:400px;
+            position: absolute;
+            left:0;
+            bottom:0;
+            z-index: -1;
+            background-color:#cccccc;
+            transition: all 0.5s;
+        }
+        .sf-up:hover{
+            transform: translateY(-50px);
+        }
+        .sf-up:hover .sf-up-next{
+            transform: translateY(50px);
+        }
+
+
+        .sf-turn{
+            position: relative;
+            width:100%;
+        }
+        .sf-turn-first{
+            height:50px;
+            background-color: #3ccb88;
+            transition: all 0.5s;
+        }
+        .sf-turn-second{
+            position: absolute;
+            top:0;
+            z-index:-1;
+            height:50px;
+            width:100%;
+            background-color: #ff4256;
+            transform: rotate3d(1,0,0,-90deg);
+            transition: all 0.5s;
+        }
+        .sf-turn:hover .sf-turn-first{
+            transform: rotate3d(1,0,0,90deg);
+        }
+        a{
+            text-decoration: none;
+        }
+        .sf-turn:hover .sf-turn-second{
+            transform: rotate3d(1,0,0,0deg);
+        }
+        .sf-text{
+            position: relative;
+            display: inline-block;
+            box-sizing: border-box;
+            font-size:24px;
+            font-weight: bold;
+            color:#FFFFFF;
+            transition: transform 0.3s;
+            transform-origin: 50% 0;
+            transform-style: preserve-3d;
+        }
+        .sf-text::before{
+            position: absolute;
+            top: 100%;
+            left: 0;
+            font-size: 24px;
+            font-weight: bold;
+            color: #272727;
+            content:'CLICK';
+            transform: rotateX(-90deg);
+            transform-origin: 50% 0;
+        }
+        .sf-text:hover{
+            transform: rotateX(90deg) translateY(-22px);
+        }
+        .sf-btn b{
+            display: inline-block;
+            position: relative;
+            transition: transform 0.3s;
+            color: #FFFFFF;
+            transform-style: preserve-3d;
+            transform-origin: 50% 0;
+        }
+        .sf-btn b:before{
+            display: inline-block;
+            position: absolute;
+            left:0;
+            top:100%;
+            color: #e8df1b;
+            transform: rotateX(-90deg);
+            content: attr(data-content);
+            transform-origin: 50% 0;
+        }
+        .sf-btn:hover b{
+            transform: rotateX(90deg) translateY(-22px);
+        }
+        .sf-input{
+            min-height:20px;
+            outline: none;
+            width:50px;
+            transition: width 0.5s;
+        }
+        .sf-input:focus{
+            width:200px;
+        }
+        .sf-fl{
+            float:left;
+        }
+        .sf-fl:after{
+            content:' ';
+            display: table;
+            clear:both;
+        }
+        .sf-clear{
+            margin-bottom:50px;
+        }
+        .sf-clear:after{
+            content:' ';
+            display: table;
+            clear:both;
+        }
+        .sf-shadow{
+            position: relative;
+            width:400px;
+            height:400px;
+            background-color: #ffd7fc;
+        }
+        .sf-border-left{
+            position: relative;
+            display: inline-block;
+            z-index:4;
+        }
+        .sf-border-left:before{
+            position: absolute;
+            display: inline-block;
+            height:10%;
+            width:0%;
+            content: "";
+            top:0;
+            left:0;
+            background-color: #ff4256;
+            transition: all ease 0.5s;
+        }
+        .sf-border-left:hover:before{
+            width:100%;
+        }
+        .sf-div{
+            width:400px;
+            height:400px;
+            background-color: #43a5eb;
+            text-align: center;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        .sf-bg1{
+            background-color:orangered;
+        }
+        .sf-bg2{
+            background-color:darkturquoise;
+        }
+        .sf-bg3{
+            background-color: hotpink;
+        }
+        .sf-bg4{
+            background-color: #cccccc;
+        }
+        .sf-up-scale{
+            position: relative;
+            transition: all ease 0.5s;
+            overflow: hidden;
+        }
+        .sf-up-scale-main{
+            position: absolute;
+            width:100%;
+            height:20%;
+            background-color: rgba(0,0,0,0.6);
+            bottom:-20%;
+            left:0;
+            transition: all ease 0.4s;
+        }
+        .sf-up-up{
+            transition: all ease 0.5s;
+        }
+        .sf-up-scale:hover .sf-up-up{
+            transform: scale(0.80);
+        }
+        .sf-up-scale:hover .sf-up-scale-main{
+            bottom:0;
+        }
+        .sf-bg-diffuse{
+            position: relative;
+            overflow: hidden;
+            z-index:3;
+            transition: all ease 0.5s;
+        }
+        .sf-bg-diffuse::before{
+            content:'';
+            display: inline-block;
+            position: absolute;
+            width:100%;
+            height:50%;
+            top:-50%;
+            left:0;
+            background-color: #1c86c4;
+            transition: all ease 0.5s;
+        }
+        .sf-bg-diffuse::after{
+            content:'';
+            display: inline-block;
+            position: absolute;
+            width:100%;
+            height:50%;
+            bottom:-50%;
+            left:0;
+            background-color: #1c86c4;
+            transition: all ease 0.5s;
+        }
+        .sf-bg-diffuse:hover{
+            color:#FFFFFF;
+        }
+        .sf-bg-diffuse:hover::before{
+            top:0;
+        }
+        .sf-bg-diffuse:hover::after{
+            bottom:0;
+        }
+        .sf-shadow-on{
+            position: relative;
+            box-shadow: 0 0 1px rgba(0, 0, 0, 0);
+            transition: all 0.5s;
+        }
+        .sf-shadow-on:hover{
+            box-shadow: 4px 4px 4px rgba(0, 0, 0, 0.6);
+        }
+        .sf-text-right{
+            float:left;
+            list-style: none;
+        }
+        .sf-text-right li{
+            float:left;
+            box-sizing: border-box;
+            list-style: none;
+            padding:15px;
+        }
+        .sf-text-right li a{
+            display: inline-block;
+            box-sizing: border-box;
+            position: relative;
+            font-size:24px;
+            color:#000000;
+            overflow: hidden;
+            transition: all 0.5s;
+        }
+        .sf-text-right li a:before{
+            content: attr(data-text);
+            position: absolute;
+            z-index:2;
+            width:0;
+            color: #ff4256;
+            overflow: hidden;
+            transition:all 0.5s
+        }
+        .sf-text-right li a:hover{
+            color:transparent;
+        }
+        .sf-text-right li a:hover:before{
+            width:100%;
+        }
+        .sf-round{
+            position: relative;
+            width:100px;
+            height:100px;
+            margin:50px;
+            border-radius: 50%;
+            border:2px solid #000;
+            transition: all 0.5s;
+        }
+        .sf-round:before{
+            content:'';
+            display: block;
+            position:absolute;
+            z-index: 3;
+            margin:auto;
+            width:10%;
+            height:10%;
+            top:0;
+            left:0;
+            bottom:0;
+            right:0;
+            border:1px solid #1c86c4;
+            transition: all 0.5s;
+        }
+        .sf-round:after{
+            content:'';
+            display: block;
+            position:absolute;
+            margin:auto;
+            width:10%;
+            height:10%;
+            border-radius:50%;
+            top:0;
+            left:0;
+            bottom:0;
+            right:0;
+            border:1px solid transparent;
+            transition: all 0.5s;
+        }
+        .sf-round:hover{
+            border:2px solid #1c86c4;
+            background-color: #1c86c4;
+        }
+        .sf-round:hover:before{
+            border:1px solid #fff;
+        }
+        .sf-round:hover:after{
+            width:120%;
+            height:120%;
+            border:2px solid #1c86c4;
+            left:-12%;
+        }
+    </style>
+</head>
+<body>
+<div class="sf-clear">
+    <button class="sf-btn sf-float-shadow"><b data-content="good">good</b></button>
+    <button class="sf-btn sf-float-shadow"><b data-content="HELLO">HELLO</b></button>
+    <button class="sf-btn sf-float-shadow"><b data-content="WORLD">WORLD</b></button>
+    <button class="sf-btn sf-float-shadow"><b data-content="WER">WER</b></button>
+    <button class="sf-btn sf-float-shadow"><span>CLICK</span></button>
+    <input type="text" class="sf-input" />
+</div>
+    <div class="sf-up sf-float-shadow sf-fl">
+        <div class="sf-up-main"></div>
+        <div class="sf-up-next">
+            <h1><a href=""><span class="sf-text">CLICK</span></a></h1>
+        </div>
+    </div>
+    <div class="sf-shadow sf-fl sf-border-left"></div>
+    <div class="sf-div sf-fl sf-shadow-on">
+        <h2 class="sf-border-left">asd</h2>
+    </div>
+    <div class="sf-fl sf-div sf-bg1 sf-up-scale">
+        <div class="sf-up-up">
+            <h2>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Amet asperiores autem, doloribus et ex laboriosam magnam magni modi natus perferendis quis repudiandae sequi suscipit tempore ut velit voluptas? Assumenda, voluptatem!</h2>
+        </div>
+        <div class="sf-up-scale-main">
+            <h1><a href="" style="color:white">我会向上</a></h1>
+        </div>
+    </div>
+    <div class="sf-fl sf-div sf-bg4 sf-bg-diffuse">
+        <h1 class="sf-border-left">I AM SFZY</h1>
+    </div>
+    <ul class="sf-text-right">
+        <li><a href="" data-text="ABOUT">ABOUT</a></li>
+        <li><a href="" data-text="DIE">LIVE</a></li>
+        <li><a href="" data-text="YOU">THANK</a></li>
+        <li><a href="" data-text="UGLY">BEAUTIFUL</a></li>
+    </ul>
+<div class="sf-clear"></div>
+    <div class="sf-round"></div>
+<script>
+    seajs.use("bus/canvas");
+</script>
+</body>
+</html>

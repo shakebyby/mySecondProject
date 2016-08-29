@@ -4,20 +4,37 @@
     <meta charset="UTF-8">
     <title>Title</title>
     <link rel="stylesheet" href="src/bootstrap/css/bootstrap.css">
+    <link rel="stylesheet" href="src/bootstrap/css/animate.css">
+    <script src="./src/js/jquery-1.11.2.js"></script>
+    <script src="./src/js/sea.js"></script>
+    <script src="./src/config.js"></script>
     <style>
         div{
             border:1px solid #ddd;
+            height: 100px;
+        }
+        .bg1{
+            background-color: #3ccb88;
+        }
+        .bg2{
+            background-color: #ff5b73;
+        }
+        .bg3{
+            background-color: #43a5eb;
         }
     </style>
 </head>
 <body>
     <div class="container">
         <div class="row">
-            <div class="col-xs-6 col-md-4">ss</div>
-            <div class="col-xs-6 col-md-4">ss</div>
-            <div class="col-xs-3 col-md-4">aa</div>
-            <div class="col-xs-3 col-xs-push-6 col-md-12 col-md-push-0">w</div>
+            <div class="col-xs-6 col-md-4 bg1" id="text"></div>
+            <div class="col-xs-6 col-md-4 bg3" id="text2"></div>
+            <div class="col-xs-3 col-sm-12 col-md-4 bg2 " id="text3"></div>
+            <div class="col-xs-3 col-sm-12 col-sm-push-0 bg3 col-xs-push-6 col-md-12 col-md-push-0"></div>
         </div>
     </div>
 </body>
+
+
+<script>seajs.use("bus/main08")</script>
 </html>

@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>z-index</title>
+    <script src="./src/js/jquery-1.11.2.js"></script>
+    <style>
+        .z1{
+            position: relative;
+            top:50px;
+        }
+        .z2{
+            position: relative;
+        }
+        .sf-div{
+            width:100px;
+            height:100px;
+        }
+        .sf-bg1{
+            background-color: #3ccb88;
+        }
+        .sf-bg2{
+            background-color: #43a5eb;
+        }
+    </style>
+</head>
+<body>
+    <div class="z1 sf-div sf-bg1"></div>
+    <div class="z2 sf-div sf-bg2"></div>
+    <select class="selectschool" id="city">
+        <option selected>北京</option>
+        <option>上海</option>
+        <option>浙江</option>
+        <option>南京</option>
+    </select>
+    <select class="selectschool name" id="schoolname">
+        <option>北京大学</option>
+        <option>清华大学</option>
+        <option>北京航天大学</option>
+    </select>
+    <select class="selectschool name" id="schoolname">
+        <option>复旦大学</option>
+        <option>交通大学</option>
+        <option>同济大学</option>
+    </select>
+    <select class="selectschool name" id="schoolname">
+        <option>sda</option>
+        <option>asd</option>
+        <option>a</option>
+    </select>
+    <select class="selectschool name" id="schoolname">
+        <option>112</option>
+        <option>332</option>
+        <option>133</option>
+    </select>
+
+    <script>
+
+        var currentShowCity=0;
+        $("#city").change(function(){
+            $("#city option").each(function(i,o){
+                //console.log(i,o);
+
+                if($(this).prop("selected")){
+                    console.log(i)
+                    $(".name").hide();
+                    $(".name").eq(i).show();
+                    currentShowCity=i;
+                }
+            });
+            //console.log(currentShowCity)
+        });
+        $("#city").change();
+    </script>
+</body>
+</html>

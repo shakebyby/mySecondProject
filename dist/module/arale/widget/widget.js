@@ -1,0 +1,1 @@
+define(function(e,i,n){n.exports=e("./src/widget")});

@@ -19,5 +19,12 @@ define(function(require,exports,module){
             });
             $(this).data("onoff",true)
         }
-    })
+    });
+    let {length:len}='hello';
+    [1,undefined,3].map((x='yes')=>x);
+    console.log(len);
+    console.log(length);
+    let {s:ss}={s:3};
+    console.log(Boolean.prototype.toString());
+    console.log(ss);
 });

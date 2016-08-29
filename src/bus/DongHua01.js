@@ -22,4 +22,18 @@ define(function (require, exports, module) {
             $(this).data("onoff", true);
         }
     });
+    var _hello = 'hello';
+    var len = _hello.length;
+
+    [1, undefined, 3].map(function () {
+        var x = arguments.length <= 0 || arguments[0] === undefined ? 'yes' : arguments[0];
+        return x;
+    });
+    console.log(len);
+    console.log(length);
+    var _s = { s: 3 };
+    var ss = _s.s;
+
+    console.log(Boolean.prototype.toString());
+    console.log(ss);
 });

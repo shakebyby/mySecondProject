@@ -49,6 +49,12 @@ define(function(require,exports,module){
     var mathRandom=sf.mathRandom=function(min,max){
         return Math.floor((max-min+1)*Math.random()+min);
     };
+    //参数转数组
+    var argumentsToAry=sf.argumentsToAry=function(){
+        return Array.prototype.slice.call(arguments);
+    };
+    
+    
     //双色球训练
     sf.doubleBall={
         REDBALL:6,

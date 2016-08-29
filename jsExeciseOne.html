@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>js execise 01</title>
+</head>
+<body>
+
+
+<script>
+    (function(win){
+        var mathRandom=function(min,max){
+            return Math.floor((max-min+1)*Math.random()+min);
+        };
+        function makeBlue(num){
+            var arr=[];
+            for(var i=0;i<num;i++){
+                arr[i]=mathRandom(1,16);
+            }
+            return arr;
+        }
+        var str="this is a dream sss SS AAA";
+        str=str.split(" ").join("").split("").sort().join("");
+        console.log(str);
+        console.log(str.match(/(.)\1*/g).sort(function(a,b){return a.length-b.length}).join('\n'));
+        var ary=[3,5,5,4,1,24,5,1,2,54,54,54,213,213,213,213];
+        ary=ary.sort(function(a,b){return a-b;}).join(",")+",";
+        console.log(ary);
+        console.log(ary.match(/(\d+,?)\1*/gi).map(function(value,index){
+            return value.replace(/,$/,"");
+        }));
+        function ab(arr){
+            var arr2;
+            arr=arr.sort(function(a,b){return a-b;}).join(",")+",";
+            arr=arr.match(/(\d+[,]?)\1*/gi).map(function(value,index){
+                return value.replace(/,$/,"");
+            });
+            return arr;
+        }
+
+        console.log(ab(makeBlue(200)))
+    })(window);
+</script>
+</body>
+</html>

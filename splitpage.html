@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>splitpage</title>
+    <script src="./src/js/jquery-1.11.2.js"></script>
+    <link rel="stylesheet" href="src/bootstrap/css/animate.css">
+    <script src="./src/js/sea.js"></script>
+    <script src="./src/config.js"></script>
+    <link rel="stylesheet" href="requireDirReset/css/split-page.css">
+</head>
+<body>
+    <div class="split-page">
+        <div class="split-content"></div>
+        <div class="split-page-nav">
+            <span class="split-nav-forword"><a href="javascript:void(0)" data-dialog="dialog01">dialog</a></span>
+            <ul class="split-nav-num">
+                <li>1</li>
+                <li>2</li>
+                <li>3</li>
+            </ul>
+            <span class="split-nav-next"></span>
+        </div>
+    </div>
+
+
+
+
+
+<div class="dialog" id="dialog01">
+    <div class="dialog-content main">
+        <span class="delete"><a href="javascript:void(0)" data-close="dialog01">X</a></span>
+        <h1>我是dialog</h1>
+    </div>
+</div>
+
+
+    <script>seajs.use("bus/main09")</script>
+</body>
+</html>

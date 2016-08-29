@@ -8,7 +8,9 @@
             jQuery:"js/jQuery",
             react:"js/react",
             reactDom:"js/react-dom",
-            reflux:"js/reflux"
+            reflux:"js/reflux",
+            masonry:"js/masonry.pkgd",
+            handlebars:"js/handlebars-v4.0.5"
         },
         path:{
           bootstrap:"bootstrap",

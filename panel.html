@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Panel</title>
+    <script src="./src/js/jquery-1.11.2.js"></script>
+    <link rel="stylesheet" href="src/bootstrap/css/animate.css">
+    <script src="./src/js/sea.js"></script>
+    <script src="./src/config.js"></script>
+    <style>
+        header,div,ul,li,nav,body,html,aside{
+            margin:0;
+            padding:0;
+        }
+        ul,li{
+            list-style: none;
+        }
+        .sf-nav{
+            box-sizing: border-box;
+            background-color: #999;
+            width:100%;
+            height:48px;
+        }
+        .sf-nav>li{
+            float:left;
+            box-sizing: border-box;
+            padding:15px;
+            position: relative;
+        }
+        .sf-nav>li:hover{
+            background-color: #2aabd2;
+        }
+        .sf-sele{
+            position: absolute;
+            width:100%;
+            top:48px;
+            left:0;
+        }
+        .sf-sele>li a{
+            display: inline-block;
+            width:100%;
+            box-sizing: border-box;
+            padding:10px;
+            text-align: center;
+            background-color: #f583bd;
+        }
+        .sf-sele>li a:hover{
+            background-color: #1c86c4;
+        }
+        a{
+            color:#fff;
+        }
+        .sf-container{
+            width:100%;
+            height:100%;
+        }
+        .sf-aside{
+            width:50px;
+            height:50px;
+            position: fixed;background-color: #ff4256;
+            top:10%;
+            left:0;
+        }
+        .sf-aside-select{
+            position: fixed;
+            top:10%;
+            left:-100%;
+        }
+        .sf-aside-select ul li a{
+            display: inline-block;
+            text-align: center;
+            width:100px;
+            padding:10px;
+            background-color: #e8df1b;
+            transition: all 0.2s;
+        }
+        .sf-aside-select ul li a:hover{
+            background-color: #1c86c4;
+            color:#FFFFFF;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <nav>
+            <ul class="sf-nav">
+                <li>
+                    <a href="">水果</a>
+                    <ul class="sf-sele animated slideInDown">
+                        <li><a href="">asd</a></li>
+                        <li><a href="">asd</a></li>
+                        <li><a href="">asd</a></li>
+                        <li><a href="">asd</a></li>
+                    </ul>
+                </li>
+                <li>
+                    <a href="">水果</a>
+                    <ul class="sf-sele animated slideInDown">
+                        <li><a href="">asdss</a></li>
+                        <li><a href="">asdss</a></li>
+                        <li><a href="">asdss</a></li>
+                        <li><a href="">asdss</a></li>
+                    </ul>
+                </li>
+                <li>
+                    <a href="">水果阿萨德</a>
+                    <ul class="sf-sele animated slideInDown">
+                        <li><a href="">asd</a></li>
+                        <li><a href="">asd</a></li>
+                        <li><a href="">asd</a></li>
+                        <li><a href="">asd</a></li>
+                        <li><a href="">asd</a></li>
+                        <li><a href="">asd</a></li>
+                        <li><a href="">asd</a></li>
+                        <li><a href="">asd</a></li>
+                        <li><a href="">asd</a></li>
+                        <li><a href="">asd</a></li>
+                    </ul>
+                </li>
+                <li>
+                    <a href="">水果阿萨德asdasdadsasd</a>
+                    <ul class="sf-sele animated slideInDown">
+                        <li><a href="">asd</a></li>
+                        <li><a href="">asd</a></li>
+                        <li><a href="">asd</a></li>
+                        <li><a href="">asd</a></li>
+                        <li><a href="">asd</a></li>
+                        <li><a href="">asd</a></li>
+                        <li><a href="">asd</a></li>
+                    </ul>
+                </li>
+            </ul>
+        </nav>
+    </header>
+    <aside>
+        <div class="sf-aside"></div>
+        <div class="sf-aside-select">
+            <ul>
+                <li><a href="">啊实打实的</a></li>
+                <li><a href="">按时大大</a></li>
+                <li><a href="">大</a></li>
+                <li><a href="">撒旦</a></li>
+            </ul>
+        </div>
+    </aside>
+    <section class="sf-container">
+        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Alias aliquam architecto asperiores, blanditiis consequuntur dicta dolores facilis ipsum laudantium minus modi nam nisi quisquam, quo sapiente soluta suscipit tempore voluptatem.</p>
+    </section>
+    <br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
+    <script>
+        $(".sf-sele").hide();
+        $(".sf-nav>li").hover(function(e){
+            $(".sf-sele").addClass("slideOutUp");
+            $(e.target).find(".sf-sele").removeClass("slideOutUp").show();
+        },function(e){
+            $(".sf-sele").addClass("slideOutUp");
+        });
+        $('.sf-aside').on('mouseenter',function(){
+            $(this).animate({'left':'-100%'},500);
+            $('.sf-aside-select').animate({'left':'0'},500);
+        });
+        $('.sf-aside-select').on('mouseleave',function(){
+            $(this).animate({'left':'-100%'},500);
+            $('.sf-aside').animate({'left':'0'},500);
+        });
+    </script>
+</body>
+</html>

@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Widget</title>
+    <script src="./src/js/jquery-1.11.2.js"></script>
+    <script src="./src/js/sea.js"></script>
+    <script src="./src/config.js"></script>
+    <script src="./src/js/handlebars-v4.0.5.js"></script>
+    <link rel="stylesheet" href="./src/bootstrap/css/bootstrap.css">
+    <style>
+        .sf-table{
+            width:100%;
+            border-spacing: 5;
+        }
+        .sf-table tbody tr{
+            background-color:#ddd;
+        }
+        .sf-TAC{
+            text-align:center;
+        }
+        .sf-VAM{
+            vertical-align:middle;
+        }
+    </style>
+</head>
+<body>
+
+<div id="suit-content"></div>
+<script class="template" type="text/plain">
+    {{#each people}}
+        <p>{{EngUC name}}{{#isEqual name "tom"}}汤姆{{else}}按时{{/isEqual}}:{{age}}{{school}}</p>
+        <p></p>
+    {{/each}}
+    <table class="table table-border">
+        <thead style="text-align:centar;">
+            <tr>
+                <th class="sf-TAC" width="100">名字</th>
+                <th class="sf-TAC" width="100">年龄</th>
+                <th class="sf-TAC">学校</th>
+                <th class="sf-TAC">体型</th>
+                <th class="sf-TAC">链接</th>
+            </tr>
+        </thead>
+        <tbody>
+            {{#each people}}
+                <tr style="text-align:center;">
+                    <td>{{#isEqual name "tom"}}{{EngUC name}}{{else}}{{name}}{{/isEqual}}</td>
+                    <td>{{age}}</td>
+                    <td>{{#school}}{{../school}}{{else}}没毕业{{/school}}</td>
+                    <td>{{#body}}{{#head}}头：{{../head}}<br>{{/head}}{{#hand}}手：{{../hand}}<br>{{/hand}}{{#all}}整体：{{../all}}{{/all}}{{else}}这是个骷髅    {{/body}}</td>
+                    <td>{{#each href}}<a href="{{href}}">{{name}}</a></br>{{/each}}</td>
+                </tr>
+            {{/each}}
+        </tbody>
+    </table>
+</script>
+
+<script>
+    seajs.use("bus/widget01")
+</script>
+</body>
+</html>

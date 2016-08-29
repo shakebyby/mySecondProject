@@ -1,0 +1,299 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        .main{
+            width:1000px;
+            height:1000px;
+            display: flex;
+            position: relative;
+            justify-content: center;
+            align-items: center;
+            margin:auto;
+            transform-style: preserve-3d;
+            transition: all 15s;
+            transform-origin:50% 50% 0;
+        }
+        .bg-main3{
+            display: flex;
+            position: relative;
+            justify-content: center;
+            align-items: center;
+            margin:auto;
+            transform-style: preserve-3d;
+            transition: all 5s;
+            transform-origin:50% 50% 0;
+        }
+        .main:hover{
+            transform: rotateX(720deg) rotateY(720deg) rotateZ(720deg);
+        }
+        .main:hover .small{
+            transform: translateZ(-500px) translateX(-200px) rotateX(-720deg) rotateY(-720deg) rotateZ(-720deg);
+        }
+        .main:hover .bg-main{
+            transform:rotateX(-1200deg) rotateY(-445deg) rotateZ(-445deg);
+        }
+        .main:hover .bg-main2{
+            transform:rotateX(-1200deg) rotateY(-700deg) rotateZ(-445deg);
+        }
+        .main:hover .bg-main3{
+            transform: rotateX(-900deg) rotateY(-405deg) rotateZ(-405deg) translateZ(50px);
+        }
+        .sf1{
+            width:100px;
+            height: 100px;
+            background-color: #b9c474;
+            position: relative;
+            opacity: 0.7;
+            left:200px;
+            top:100px;
+            transform: rotateX(-90deg) translateZ(-50px);
+        }
+        .sf2{
+            width:100px;
+            height: 100px;
+            background-color: #51c1c4;
+            opacity: 0.7;
+            transform: rotateY(90deg) translateZ(50PX);
+        }
+        .sf3{
+            width:100px;
+            height: 100px;
+            background-color: #ff5b73;
+            opacity: 0.7;
+            transform: translateZ(-50px);
+        }
+        .sf4{
+            width:100px;
+            height: 100px;
+            background-color: #e8df1b;
+            opacity: 0.7;
+            position: relative;
+            left:-100px;
+            transform: translateZ(50px);
+        }
+        .sf5{
+            width:100px;
+            height: 100px;
+            background-color: #c646ff;
+            position: relative;
+            opacity: 0.7;
+            left:-100px;
+            transform: rotateY(-90deg) translateZ(50px);
+        }
+        .sf6{
+            width:100px;
+            height: 100px;
+            background-color: #000000;
+            position: relative;
+            opacity: 0.7;
+            left:-300px;
+            top:-100px;
+            transform: rotateX(90deg) translateZ(-50px);
+        }
+        .small{
+            position: absolute;
+            transform-style: preserve-3d;
+            top:325px;
+            left:525px;
+            transform: translateZ(-25px);
+            transform-origin:50% 50% 0;
+            transition:all 20s;
+        }
+        .sf-small1{
+            width:50px;
+            height: 50px;
+            background-color: #b9c474;
+            position: relative;
+            left:-100px;
+            top:125px;
+            transform: rotateX(-90deg) translateY(-25px)  ;
+        }
+        .sf-small2{
+            width:50px;
+            height: 50px;
+            background-color: #51c1c4;
+            position: relative;
+            left:-50px;
+            top:100px;
+            transform: rotateY(90deg) translateZ(-25px) translateX(-25px);
+        }
+        .sf-small3{
+            width:50px;
+            height: 50px;
+            background-color: #ff5b73;
+            position: relative;
+            left:-100px;
+            top:50px;
+        }
+        .sf-small4{
+            width:50px;
+            height: 50px;
+            background-color: #e8df1b;
+            position: relative;
+            left:-100px;
+            transform: translateZ(50px);
+        }
+        .sf-small5{
+            width:50px;
+            height: 50px;
+            background-color: #c646ff;
+            position: relative;
+            left:-100px;
+            top:-50px;
+            transform: rotateY(-90deg) translateZ(25px) translateX(25px);
+        }
+        .sf-small6{
+            width:50px;
+            height: 50px;
+            background-color: #000000;
+            position: relative;
+            left:-100px;
+            top:-100px;
+                transform: rotateX(90deg) translateZ(-25px) translateY(25px);
+        }
+        .bg-main{
+            position: absolute;
+            transform-style: preserve-3d;
+            left:350px;
+            transform-origin:50% 50% 0;
+            transition:all 15s;
+        }
+        .bg1-on{
+            left:0px;
+            top:-200px;
+            transform: translateZ(100px);
+        }
+        .bg1-left{
+            position: relative;
+            left:50px;
+            top:200px;
+            transform: rotateY(90deg) translateZ(50PX);
+        }
+        .bg1-right{
+            top:-400px;
+            left:-50px;
+            transform: rotateY(-90deg) translateZ(50px);
+        }
+        .bg1-in{
+            left:-100px;
+            top:50px;
+            transform: translateZ(-100px);
+        }
+        .bg1-up{
+            left:0;
+            top:350px;
+            transform: rotateX(-90deg) translateZ(-50px);
+        }
+        .bg1-bottom{
+            left:0px;
+            top:-550px;
+            transform: rotateX(90deg) translateZ(-50px);
+        }
+
+        .bg-main2{
+            position: absolute;
+            transform-style: preserve-3d;
+            left:250px;
+            top:-500px;
+            transform-origin:50% 50% 0;
+            transition:all 10s;
+        }
+        .bg2-on{
+            left:0px;
+            top:-400px;
+            transform: translateZ(200px);
+        }
+        .bg2-left{
+            position: relative;
+            left:150px;
+            top:400px;
+            transform: rotateY(90deg) translateZ(50PX);
+        }
+        .bg2-right{
+            top:-800px;
+            left:-150px;
+            transform: rotateY(-90deg) translateZ(50px);
+        }
+        .bg2-in{
+            left:-100px;
+            top:50px;
+            transform: translateZ(-200px);
+        }
+        .bg2-up{
+            left:0;
+            top:650px;
+            transform: rotateX(-90deg) translateZ(-50px);
+        }
+        .bg2-bottom{
+            left:0px;
+            top:-1050px;
+            transform: rotateX(90deg) translateZ(-50px);
+        }
+        .bgsmall{
+            width:50px;
+            height:50px;
+            opacity: 1;
+        }
+        .bg{
+            width:100px;
+            height:100px;
+            opacity: 0.7;
+        }
+        .bg1{
+            width:200px;
+            height:200px;
+            opacity: 0.4;
+        }
+        .bg2{
+             width:400px;
+             height:400px;
+             opacity: 0.1;
+         }
+        .sf-span{
+            line-height:50px;
+            font-size:30px;
+            text-align: center;
+            color:#FFFFFF;
+        }
+    </style>
+</head>
+<body>
+<div class="main">
+    <div class="bg-main3">
+        <div class="sf1 bg"></div>
+        <div class="sf2 bg"></div>
+        <div class="sf3 bg"></div>
+        <div class="sf4 bg"></div>
+        <div class="sf5 bg"></div>
+        <div class="sf6 bg"></div>
+    </div>
+        <div class="small">
+            <div class="sf-small1 bgsmall sf-span">1</div>
+            <div class="sf-small2 bgsmall sf-span">2</div>
+            <div class="sf-small3 bgsmall sf-span">3</div>
+            <div class="sf-small4 bgsmall sf-span">4</div>
+            <div class="sf-small5 bgsmall sf-span">5</div>
+            <div class="sf-small6 bgsmall sf-span">6</div>
+        </div>
+        <div class="bg-main">
+            <div class="sf1 bg1 bg1-up"></div>
+            <div class="sf2 bg1 bg1-left"></div>
+            <div class="sf3 bg1 bg1-in"></div>
+            <div class="sf4 bg1 bg1-on"></div>
+            <div class="sf5 bg1 bg1-right"></div>
+            <div class="sf6 bg1 bg1-bottom"></div>
+        </div>
+        <div class="bg-main2">
+            <div class="sf1 bg2 bg2-up"></div>
+            <div class="sf2 bg2 bg2-left"></div>
+            <div class="sf3 bg2 bg2-in"></div>
+            <div class="sf4 bg2 bg2-on"></div>
+            <div class="sf5 bg2 bg2-right"></div>
+            <div class="sf6 bg2 bg2-bottom"></div>
+        </div>
+</div>
+</body>
+</html>

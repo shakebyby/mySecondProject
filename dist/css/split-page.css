@@ -1,0 +1,9 @@
+body,html,div,ul,li,ol,dl,dt,dd{margin:0;padding:0}
+ul,li,ol,dl,dt,dd{list-style:none}
+a{text-decoration:none}
+div,ul,li{box-sizing:border-box}
+.split-nav-forword{display:inline-block;padding:5px;color:#fff;position:relative;border-radius:5px;background-color:#51c1c4}
+.dialog{display:none;position:absolute;top:0;left:0;right:0;bottom:0;overflow:hidden;background-color:rgba(0,0,0,0.2)}
+.dialog-content{position:absolute;top:0;left:0;right:0;bottom:0;margin:auto}
+.main{width:400px;height:200px;border-radius:10%;text-align:center;padding:20px;background-color:#fff}
+.delete{position:absolute;display:inline-block;padding:10px;font-size:16px;right:5px;top:5px}
