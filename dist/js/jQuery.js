@@ -1,1 +1,1 @@
-"use strict";define(function(e,n,r){return jQuery});
+"use strict";define("js/jQuery",[],function(require,exports,module){return jQuery});

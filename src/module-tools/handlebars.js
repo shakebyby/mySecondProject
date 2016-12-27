@@ -3,7 +3,7 @@
  */
 define(function(require,exports,module){
     require("handlebars");
-
+    console.log(Handlebars);
     //比较 相等
     Handlebars.registerHelper('isEqual', function(a, b, options) {
         if (a === b) {
@@ -36,7 +36,6 @@ define(function(require,exports,module){
             return option.inverse(this);
         }
     });
-
     //英文转大写
     Handlebars.registerHelper("EngUC",function(str){
         return str.toUpperCase();
@@ -45,5 +44,6 @@ define(function(require,exports,module){
     Handlebars.registerHelper("EngLC",function(str){
         return str.toLowerCase();
     });
-
+    
+    module.exports = Handlebars;
 });

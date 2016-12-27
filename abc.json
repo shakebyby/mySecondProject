@@ -1,0 +1,10 @@
+{
+  "name": "sfzy",
+  "type": "alinw",
+  "builder": "alinw",
+  "options": {
+    "type": "web",
+    "nonCmd": true,
+    "standalone": true
+  }
+}

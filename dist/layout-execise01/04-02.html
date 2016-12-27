@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>定位和居中问题-使用transform实现</title>
+    <style>
+        section,div,body,html{
+            margin:0;
+            padding:0;
+        }
+        body,html{
+            width:100%;
+            height:100%;
+        }
+        .main{
+            background-color: #ccc;
+            position: absolute;
+            width:400px;
+            height:200px;
+            top:50%;
+            left:50%;
+            transform: translate(-50%,-50%);
+            overflow: hidden;
+        }
+        .round-left{
+            position: absolute;
+            width:100px;
+            height:100px;
+            border-radius: 50%;
+            top:-50px;
+            left:-50px;
+            background-color: #e8df1b;
+        }
+        .round-right{
+            position: absolute;
+            width:100px;
+            height:100px;
+            border-radius: 50%;
+            right:-50px;
+            bottom:-50px;
+            background-color: #e8df1b;
+        }
+    </style>
+</head>
+<body>
+<div class="main">
+    <div class="round-left"></div>
+    <div class="round-right"></div>
+</div>
+
+
+</body>
+</html>

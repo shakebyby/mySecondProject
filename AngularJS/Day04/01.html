@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>angular过滤器</title>
+    <script src="http://cdn.static.runoob.com/libs/angular.js/1.4.6/angular.min.js"></script>
+</head>
+<body ng-app="myApp">
+    <div ng-controller='myCtr1'>
+        <input type="text" ng-model="price">
+        <input type="text" ng-model="many">
+        <br>
+        <p>总价{{(price*many)|currency}}</p>
+    </div>
+
+    <script>
+        var app=angular.module('myApp',[]);
+        app.controller('myCtr1',function($scope){
+            $scope.many=0;
+            $scope.price=9.99;
+        })
+    </script>
+</body>
+</html>

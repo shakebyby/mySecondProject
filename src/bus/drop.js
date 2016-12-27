@@ -64,5 +64,5 @@ define(function(require,exports,module){
     };
     var drop=new Drop("box");
     console.log(drop);
-    drop.init();
+    drop.init()
 });

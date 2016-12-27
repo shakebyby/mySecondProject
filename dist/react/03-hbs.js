@@ -1,0 +1,1 @@
+define("react/03-hbs",["common/handlerbars"],function(require,exports,module){var Handlerbars=require("common/handlerbars"),str="{{#each this}}    <div>{{name}}</div>    <p>{{sex}}</p>    {{/each}}",compile=Handlerbars.compile(str);return compile.source=str,compile});

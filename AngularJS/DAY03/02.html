@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script src="http://cdn.static.runoob.com/libs/angular.js/1.4.6/angular.min.js"></script>
+</head>
+<body ng-app="myApp">
+    <div ng-controller="myCtrl">
+        <input type="text" ng-model="num1">
+        <br>
+        <input type="text" ng-model="num2">
+        <br>
+        <span>
+            {{mathA()}}
+        </span>
+    </div>
+
+</body>
+<script>
+    var app = angular.module('myApp',[]);
+    app.controller('myCtrl',function($scope){
+        $scope.num1=1;
+        $scope.num2=1;
+        $scope.mathA=function(){
+            return ($scope.num2-$scope.num1)/$scope.num1*100+'%';
+        }
+    })
+</script>
+</html>

@@ -7,7 +7,7 @@ define(function(require,exports,module){
     sf.shadow=function(obj){
         var timer1 = null;
         var div = document.getElementsByClassName("shadow-body")[0];
-        var px2=obj.px;
+        var px2 = obj.px;
         // div.addEventListener("mouseover",function(e){file(e, true)();console.log(11)});
         // div.onmouseout = function(e){file(e, false)();console.log(22)};
         $(div).mouseenter(function(e){file(e, true)()});

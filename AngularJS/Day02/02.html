@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script src="http://cdn.static.runoob.com/libs/angular.js/1.4.6/angular.min.js"></script>
+    <style>
+        input.ng-invalid{
+            background-color: #ff4256;
+        }
+    </style>
+</head>
+<body ng-app="myApp">
+    <div ng-controller="myCtrl">
+        <input type="text" ng-model="name">
+        <p>{{name}}</p>
+    </div>
+    <div ng-controller="myCtrl2">
+        <form action="" method="get" name="myForm">
+            <input type="email" ng-model="text" name="myAddress" required>
+            <span ng-show="myForm.myAddress.$error.email" >这不是一个合法的邮箱地址</span>
+            <span ng-show="myForm.myAddress.$error.required">不能为空</span>
+        </form>
+    </div>
+    <div ng-controller="myCtrl3">
+        <form action="" name="myForm2" ng-init="text='535@qq.com'">
+            <input type="email" required ng-model="text" name="myAddress" maxlength="20">
+            <span>{{myForm2.myAddress.$error}}</span>
+            <span>{{myForm2.myAddress.$valid}}</span>
+            <span>{{myForm2.myAddress.$dirty}}</span>
+            <span>{{myForm2.myAddress.$touched}}</span>
+            <input type="submit">
+        </form>
+    </div>
+</body>
+<script>
+    var app=angular.module('myApp',[]);
+    app.controller('myCtrl',function($scope){
+        $scope.name='jon';
+    });
+    app.controller('myCtrl2',function($scope){
+
+    });
+    app.controller('myCtrl3',function($scope){
+        
+    })
+</script>
+</html>

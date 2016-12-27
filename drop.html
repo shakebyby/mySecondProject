@@ -21,7 +21,70 @@
 </head>
 <body>
     <div class="box"></div>
-
+    <div class="box-click"></div>
     <script>seajs.use(["bus/drop"]);</script>
+    <script>
+//        $('.box').on('click', function(){
+//            alert(123);
+//        });
+////        $('.box').get(0).onclick = function(){
+////            alert(2);
+////        }
+//        document.getElementsByClassName('box')[0].addEventListener('click',function(){
+//
+//        },false);
+//        var box = $('.box');
+//        box.detach();
+//        $('body').append(box);
+        function Person(name){
+            this.name = name;
+            this.add = function(a,b){
+                return a+b
+            }
+        }
+        Person.prototype.getName = function(){
+            alert(this.name);
+        };
+        Person.prototype.getJob = function(){
+          alert(this.name+':'+this.job);
+        };
+        var p = new Person('jake');
+        console.log(p);
+        console.log(p.add(2,5));//7
+        p.add = function(a,b){
+            return a-b
+        };
+        console.log(p.add(2,5));//-3
+        p.getName();//jake
+        function IT(name,job){
+            Person.call(this,name);
+            this.job = job;
+        }
+        IT.prototype = Object.create(Person.prototype);
+//      IT.prototype.constructor = IT;
+        var web = new IT('sfzy','web');
+        web.getJob();//sfzy:web
+        console.log(web);
+        console.log(web.__proto__ == IT.prototype);
+        console.log(web.__proto__ == Person.prototype);
+        if(!Array.prototype.forEach){
+            Array.prototype.forEach = function(callback,thisarg){
+                for(var i=0; i<this.length;i++){
+                    callback.call(thisarg,this[i],i,this.toString());
+                }
+            }
+        }
+        Array.prototype.forEach = function(callback){
+            for(var i=0; i<this.length;i++){
+                callback.call([],this[i],i,this.toString());
+            }
+        };
+        var arr = [1,2,3,4,5,6];
+        arr.forEach(function(value,index,arrThis){
+            console.log(value);
+            console.log(index);
+            console.log(arrThis);
+        });
+    </script>
 </body>
 </html>

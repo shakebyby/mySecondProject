@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script src="http://cdn.static.runoob.com/libs/angular.js/1.4.6/angular.min.js"></script>
+</head>
+<body ng-app="myApp">
+<div ng-controller="myCtrl">
+    <select name="" id="selct1" ng-model="selectNames" ng-options="x for x in names"></select>
+    <select name="" id="select2" ng-model="selectNames" >
+        <option value="" ng-repeat="x in names">{{x}}</option>
+    </select>
+</div>
+<script>
+    var app=angular.module('myApp',[]);
+    app.controller('myCtrl',function($scope){
+        $scope.names = ['Google','Runoob','TaoBao'];
+    })
+</script>
+</body>
+</html>

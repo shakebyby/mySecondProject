@@ -1,1 +1,0 @@
-var $=require("jquery"),Widget=require("../widget"),TestWidget=Widget.extend({});module.exports=TestWidget,module.exports.outerBoxClass="arale-text-widget-1_0_0";

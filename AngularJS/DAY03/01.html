@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script src="http://cdn.static.runoob.com/libs/angular.js/1.4.6/angular.min.js"></script>
+</head>
+<body ng-app="myApp">
+    <div ng-controller="myCtrl">
+        <h1>{{section.text}}</h1>
+        <ul>
+            <li ng-repeat="key in names"><a href={{key.src}}>{{key.name}}</a></li>
+        </ul>
+    </div>
+</body>
+<script>
+    var app=angular.module("myApp",[]);
+    app.controller('myCtrl',function($scope){
+        var section={},names=[{name:'大闹天宫',src:'http://www.baidu.com'},{
+            name:'三打白骨精',
+            src:'http://www.google.com'
+        },{
+            name:'女儿国',
+            src:'github',
+        }];
+        section.text="大话西游";
+        $scope.section=section;
+        $scope.names=names;
+    })
+</script>
+</html>

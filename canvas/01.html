@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script src="../src/js/jquery-1.11.2.js"></script>
+    <style>
+        *{
+            margin:0;
+            padding:0;
+        }
+        body{
+            box-sizing:border-box;
+            overflow: hidden;
+        }
+        .box{
+            width:100%;
+            height:880px;
+        }
+        .box-01{
+            background-color: #f583bd;
+        }
+        .box-02{
+            background-color: #1c86c4;
+        }
+        .box-03{
+            background-color: #3ccb88;
+        }
+    </style>
+</head>
+<body>
+    <div class="box-01 box"></div>
+    <div class="box-02 box"></div>
+    <div class="box-03 box"></div>
+    <script>
+        var divs = $('.box');
+        $(document).on('mousewheel',function(event){
+            event.stopPropagation();
+//            console.log(event);
+//            console.log(event.target);
+            console.log(event)
+            var scrollTop = document.body.scrollTop;
+//            console.log(scrollTop);
+            console.log(event.deltaY);
+            if(event.deltaY > 0){
+                console.log(1);
+            }
+//            if(event.deltaY  == 0){
+//                $('html,body').animate({scrollTop:$(divs[0]).offset().top},500)
+//            }else if(event.deltaY == 100){
+//                $('html,body').animate({scrollTop:$(event.target).next('div').offset().top},500)
+//            }else if(event.deltaY == 200){
+//                $('html,body').animate({scrollTop:$(event.target).next('div').offset().top},500)
+//            }
+        });
+    </script>
+</body>
+</html>

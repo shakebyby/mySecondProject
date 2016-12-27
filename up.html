@@ -51,8 +51,10 @@
             transition: transform 0.5s;
         }
     </style>
+    <link rel="stylesheet" href="http://127.0.0.1:8001/requireDirReset/css/01.css">
 </head>
 <body>
+<div class="anywhere-css">asdad</div>
 <div class="main">
     <div class="sf-up">
         <img class="sf-up-img" src="src/images/ad-car01.jpg" />
@@ -64,7 +66,19 @@
 </div>
 
 <script>
-
+    function sliceFix(obj){
+        var arr=[],i=0;
+        for(;i<obj.length;i++){
+            arr[i]=obj[i];
+        }
+        return arr;
+    }
+    var div = document.getElementsByTagName('div');
+    try{
+        console.log(Array.prototype.slice.call(div));
+    }catch(e){
+        console.log(sliceFix(div))
+    }
 
 </script>
 </body>

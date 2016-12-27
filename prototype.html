@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>prototype</title>
+</head>
+<body class="ss sss aa">
+
+<script>
+    function People(name,age){
+        this.name = name;
+        this.age = age;
+    }
+    People.prototype.work = function(){
+        return 'i am '+this.name+" age: "+this.age;
+    };
+    function Writer(name,age,job){
+        People.call(this,name,age);
+        this.job = job;
+    }
+    Writer.prototype = Object.create(People.prototype);
+    Writer.prototype.constructor = Writer;
+    Writer.prototype.work = function(){
+        return People.prototype.work.call(this)+' do '+this.job;
+    };
+    console.log(People.prototype);
+    console.log(Writer.prototype);
+    var sfzy = new People('sfzy',22);
+    console.log(sfzy.work());
+    sfzy = new Writer('sf',21,'web');
+    console.log(sfzy.work());
+    var node = document.createElement('div');
+    node.style.height = '100px';
+    node.style.width = "100px";
+    node.style.backgroundColor = 'red';
+    document.body.appendChild(node);
+    console.log(document.getElementsByTagName('body')[0].classList.contains('ss'));
+</script>
+</body>
+</html>

@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        .main:before{
+            content:"";
+            position: absolute;
+            width:100px;
+            height:100px;
+            border-radius: 50%;
+            top:-50px;
+            left:-50px;
+            background-color: #e8df1b;
+        }
+        .main:after{
+            content: "";
+            position: absolute;
+            width:100px;
+            height:100px;
+            border-radius: 50%;
+            right:-50px;
+            bottom:-50px;
+            background-color: #e8df1b;
+        }
+        .main{
+            background-color: #ccc;
+            display: inline-block;
+            position: relative;
+            width:400px;
+            height:200px;
+            overflow: hidden;
+        }
+        .mask{
+            position: fixed;
+            left: 0;
+            top:0;
+            height: 100%;
+            width: 100%;
+            text-align: center;
+            background-color: rgba(200, 200, 200, .2);
+        }
+        .mask:after{
+            content: " ";
+            display: inline-block;
+            vertical-align: middle;
+            height: 100%;
+        }
+        .dialog{
+            display: inline-block;
+            border: 3px solid lightblue;
+        }
+    </style>
+</head>
+<body>
+
+<div class="mask">
+    <div class="dialog">啊实打实的实打实大声道</div>
+</div>
+
+</body>
+</html>

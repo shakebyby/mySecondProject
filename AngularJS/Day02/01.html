@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script src="http://cdn.static.runoob.com/libs/angular.js/1.4.6/angular.min.js"></script>
+</head>
+<body ng-app="myApp">
+    <div ng-init="names=[{name:'tom',sex:'woman'},{name:'may',sex:'man'}]">
+        <ul>
+           <li ng-repeat="x in names"><a href="">
+               {{x.name}}：{{x.sex}}
+           </a></li>
+        </ul>
+    </div>
+
+    <my-tools></my-tools>
+    <p class="sf-div" my-tools></p>
+    <p class="my-tools"></p>
+    <!-- directive:my-tools -->
+    <script>
+        var app=angular.module("myApp",[]);
+//        自定义指令
+        app.directive("myTools",function(){
+            return {
+//                restrict默认为EA
+                restrict:"EACM",//设置为C才可以用class调用指令,其他指令失效；ELEMENT,CLASS,ATTRIBUTE,
+                // 设置为A那么只能使用属性去调用指令;
+                // 设置为E只能用标签调用；
+                // 设置为M才可以调用注释里的指令；其他指令失效
+                template:"<h1>阿萨德 <a href=''>asd</a>阿萨德</h1>",
+                replace:true,//若要调用注释里的指令，replace必须设置为true;
+            }
+        })
+    </script>
+</body>
+</html>

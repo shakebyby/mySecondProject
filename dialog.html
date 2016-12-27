@@ -96,7 +96,7 @@
         </div>
     </div>
     <div>
-        <button class="sf-btn1 btn-block">
+        <button class="sf-btn1 btn-block" data-toggle="update">
             i
         </button>
     </div>
@@ -122,6 +122,11 @@
                 $('body').css('overflow',"auto");
             }
         });
+        console.log(window.location);
+        console.log(location.href);
+        $('[data-toggle="update"]').on('click',true,function(){
+            window.location=location.href;
+        })
     </script>
 </body>
 </html>

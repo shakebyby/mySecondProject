@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>clac布局</title>
+    <style>
+        body,html{
+            color: #000000;
+            margin:0;
+            padding:0;
+        }
+        ul,li{
+            list-style: none;
+        }
+        a{
+            color:#000;
+            text-decoration: none;
+        }
+        a:hover{
+            color:#e4393c;
+        }
+        .sf-container {
+            width: calc(100% - 40px);
+            margin: auto;
+        }
+        header {
+            background: #f60;
+            padding: 20px;
+            width: calc(100% - 40px);
+        }
+        .main {
+            border: 8px solid #51c1c4;
+            float: left;
+            padding: 20px;
+            width: calc(75% - 20px * 2 - 8px * 2);
+        }
+        .accessory {
+            border: 8px solid #3ccb88;
+            float: left;
+            padding: 10px;
+            width: calc(25% - 10px * 2 - 8px * 2 );
+        }
+        .container{
+            overflow: hidden;
+        }
+        .container:after{
+            content: " ";
+            display: table;
+            clear:both;
+        }
+        footer {
+            clear:both;
+            background: #5053af;
+            padding: 20px;
+            color: #fff;
+            width: calc(100% - 40px);
+        }
+    </style>
+</head>
+<body>
+<div class="sf-container">
+    <header>
+        <h1>我是header</h1>
+    </header>
+    <div class="container">
+        <div class="main">
+            <h1>我是main</h1>
+            <p>我的宽度设置为：calc(75% - 20px * 2 - 8px * 2)</p>
+        </div>
+        <div class="accessory">
+            <ul>
+                <li><a href="#">我是右边栏</a></li>
+                <li><a href="#">我的宽度设置为</a></li>
+                <li><a href="#">calc(25% - 10px * 2 - 8px * 2 )</a></li>
+            </ul>
+        </div>
+    </div>
+    <footer>
+        我是footer
+    </footer>
+</div>
+</body>
+</html>

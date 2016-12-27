@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script src="http://cdn.static.runoob.com/libs/angular.js/1.4.6/angular.min.js"></script>
+</head>
+<body ng-app="myApp">
+    <div ng-controller="myCtrl">
+        <h1>
+            {{myUrl}}
+        </h1>
+    </div>
+
+    <script>
+        var app=angular.module('myApp',[]);
+        app.controller('myCtrl',function($scope,$location){
+            $scope.myUrl=$location.absUrl();
+        })
+    </script>
+</body>
+</html>

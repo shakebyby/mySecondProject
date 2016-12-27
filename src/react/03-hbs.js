@@ -1,0 +1,1 @@
+define(function(require, exports, module) { var Handlerbars = require("common/handlerbars"); var str = "{{#each this}}    <div>{{name}}</div>    <p>{{sex}}</p>    {{/each}}"; var compile = Handlerbars.compile(str); compile.source=str; return compile; });

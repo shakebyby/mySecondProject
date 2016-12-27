@@ -2,9 +2,9 @@
  * Created by wb-sfzy189670 on 2016/8/22.
  */
 define(function(require,exports,module){
-    require("module-tools/handlebars");
-    var react=require("react");
-    var $=require("jQuery");
+    var Handlebars = require("module-tools/handlebars");
+    var react = require("react");
+    var $ = require("jQuery");
     var json={
         people:[
             {name:"jake",age:14,
@@ -31,6 +31,9 @@ define(function(require,exports,module){
         time:"2016-05-15"
     };
     console.log(json);
+    
     $("#suit-content").html(Handlebars.compile($(".template").html())(json));
+    
     console.log(react);
+    console.log(Handlebars);
 });

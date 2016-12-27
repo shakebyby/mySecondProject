@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script src="../src/js/jquery-1.11.2.js"></script>
+    <script src="../src/js/sea.js"></script>
+    <script src="../src/config.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/react/0.13.1/react-with-addons.js"></script>
+    <script src="https://cdn.jsdelivr.net/refluxjs/0.2.11/reflux.min.js"></script>
+</head>
+<body>
+<div id="App"></div>
+<script>
+    var TodoAction = Reflux.createActions(['addItems']);
+    var TodoStore = Reflux.createStore({
+        items:[],
+        listenables:[TodoAction],
+        onAddItems:function(text){
+            this.items.push(text);
+            this.trigger(this.items);
+        }
+    });
+    var TodoApp = React.createClass({
+            mixins:[Reflux.connect(TodoStore,'items')],
+            onChange:function(e){
+                this.setState({
+                    text:e.target.value
+                })
+            },
+            addItem:function(e){
+                TodoStore.addItems(this.state.text);
+            },
+            render:function(e){
+                return (
+                        <div>
+                            <h3>TODO</h3>
+                            <ul>
+                                {
+                                this.state.items.map(function(data){
+                                    return <li>data</li>;
+                                })
+                            }
+                            </ul>
+                            <input type="text" onChange={this.onChange} value={this.state.text} />
+                            <input type="button" value={'add'+this.state.items.length +1} onClick={this.addItem} />
+                        </div>
+                )
+            }
+    })
+</script>
+</body>
+</html>

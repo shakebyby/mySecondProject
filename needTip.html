@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script src="./src/js/sea.js"></script>
+    <script src="./src/config.js"></script>
+    <style>
+        *{
+            margin : 0;
+            padding: 0;
+        }
+        .need-tip-father{
+            margin:auto;
+            box-sizing: border-box;
+            position: absolute;
+            left:0;
+            top:0;
+            right:0;
+            bottom:0;
+            background-color: #ff5b73;
+            width:200px;
+            height:200px;
+        }
+        .need-tip-son{
+            position: absolute;
+            top:-40px;
+            width:100%;
+            line-height:24px;
+            min-height:24px;
+            text-align: center;
+            border-radius: 3000px;
+            background-color: #43a5eb;
+        }
+        .need-tip-son:after{
+            content:" ";
+            display: inline-block;
+            position: absolute;
+            width: 0;
+            height: 0;
+            border-left: 5px solid transparent;
+            border-right: 5px solid transparent;
+            border-top: 10px solid #43a5eb;
+            top:24px;
+            left:50%;
+        }
+    </style>
+</head>
+<body>
+    <div class="need-tip-father" data-toggle="tip"></div>
+<script>seajs.use('bus/needTip')</script>
+</body>
+</html>

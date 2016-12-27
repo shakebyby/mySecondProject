@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>display:flex布局</title>
+    <style>
+        html,body,div{
+            padding:0;
+            margin:0;
+        }
+        .box{
+            display: flex;
+            /*flex-direction属性决定主轴的方向（即项目的排列方向）*/
+            /*flex-direction: column;*/
+            /*flex-direction: column-reverse;*/
+            flex-direction: row-reverse;
+            /*flex-direction: row;*/
+            /*flex-direction: inherit;*/
+            /*flex-wrap属性定义，如果一条轴线排不下，如何换行*/
+            /*flex-wrap: nowrap;*/
+            /*flex-wrap: wrap;*/
+            /*flex-wrap: wrap-reverse;*/
+            /*flex-flow属性是flex-direction属性和flex-wrap属性的简写形式，默认值为row nowrap*/
+            /*flex-flow:column wrap;*/
+            /*justify-content属性定义了项目在主轴上的对齐方式*/
+            /*justify-content: flex-start;*/
+            /*justify-content: flex-end;*/
+            /*justify-content: center;*/
+            /*justify-content: space-between;*/
+            /*justify-content: space-around;*/
+            /*align-items属性定义项目在交叉轴上如何对齐*/
+            /*align-items: flex-start;*/
+            /*align-items: flex-end;*/
+            /*align-items: center;*/
+            /*align-items: baseline;*/
+            /*align-items: stretch;*/
+            /*align-content属性定义了多根轴线的对齐方式。如果项目只有一根轴线，该属性不起作用*/
+            /*align-content: flex-start;*/
+            /*align-content: flex-end;*/
+            /*align-content: center;*/
+            /*align-content: space-between;*/
+            /*align-content: space-around;*/
+            /*align-content: stretch;*/
+        }
+        .flex-item{
+            box-sizing: border-box;
+            background: tomato;
+            padding: 5px;
+            width: 200px;
+            margin-top: 10px;
+            margin-left:10px;
+            line-height: 150px;
+            color: white;
+            font-weight: bold;
+            font-size: 3em;
+            text-align: center;
+        }
+        .sf-height0{
+            height:500px;
+        }
+        .sf-height1{
+            height:300px;
+        }
+        /*order属性定义项目的排列顺序。数值越小，排列越靠前，默认为0。*/
+        .item0{
+            order:0;
+        }
+        .item1{
+            order:1;
+        }
+        .item2{
+            order:2;
+        }
+        .item3{
+            order:3;
+        }
+        .item4{
+            order:4;
+        }
+        .item5{
+            order:5;
+        }
+        /*flex-grow属性定义项目的放大比例，默认为0，即如果存在剩余空间，也不放大。*/
+        .item-grow2{
+            flex-grow: 1;
+        }
+        /*flex-shrink属性定义了项目的缩小比例，默认为1，即如果空间不足，该项目将缩小*/
+        .item-shrink{
+            flex-shrink: 2;
+        }
+        /*flex-basis属性定义了在分配多余空间之前，项目占据的主轴空间（main size）。浏览器根据这个属性，计算主轴是否有多余空间。它的默认值为auto，即项目的本来大小。*/
+        .item-basis{
+            flex-basis: auto;
+        }
+        /*flex属性是flex-grow, flex-shrink 和 flex-basis的简写，默认值为0 1 auto。后两个属性可选。*/
+        .item-flex{
+            flex:0 1 auto;
+            /*flex:auto (1 1 auto)*/
+            /*flex:none (0 0 auto)*/
+        }
+        /*align-self属性允许单个项目有与其他项目不一样的对齐方式，可覆盖align-items属性。默认值为auto，表示继承父元素的align-items属性，如果没有父元素，则等同于stretch。*/
+        .item-self{
+            align-self: flex-end;
+            /*该属性可能取6个值，除了auto，其他都与align-items属性完全一致。*/
+        }
+    </style>
+</head>
+<body>
+    <div class="box">
+        <div class="flex-item">1</div>
+        <div class="flex-item">2</div>
+        <div class="flex-item">3</div>
+        <div class="flex-item">4</div>
+        <div class="flex-item">5</div>
+        <div class="flex-item">6</div>
+    </div>
+</body>
+</html>

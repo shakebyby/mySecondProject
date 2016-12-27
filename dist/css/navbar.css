@@ -1,7 +1,0 @@
-ul,ol,li,div,p,html,body{padding:0;margin:0;list-style-type:none}
-.sf-navbar{position:fixed}
-.sf-navbar>li{float:left;margin-left:10px}
-.sf-navbar>li a{padding:5px 10px;background-color:#2aabd2;display:inline-block;transition:all .2s linear}
-.sf-navbar>li :hover{background-color:#f583bd;color:#fff}
-.sf-navbar>li .redB{background-color:#f583bd;color:#fff}
-.redB{background-color:#f583bd}

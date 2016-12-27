@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script src="./JS/vue.js"></script>
+    <style>
+        p{
+            margin:0;
+            padding:0;
+        }
+    </style>
+</head>
+<body>
+    <div id="app">
+        {{message}}
+    </div>
+
+    <div id="app-2">
+        <span v-bind:title="message2">
+            Hover your mouse over me for a few seconds to see my dynamically bound title!
+        </span>
+    </div>
+
+    <div id="app-3">
+        <p v-if="seen">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aliquid, aut blanditiis commodi cum est et fuga illum labore, nulla numquam possimus quasi quis quisquam quo ratione rem saepe, sequi tenetur?</p>
+        <button class="JS-click-btn">ss</button>
+    </div>
+
+    <div id="app-4">
+        <p>{{message}}</p>
+        <ul>
+            <li v-for="book in books">
+                <a v-bind:href="book.href">{{book.name}}</a>
+            </li>
+        </ul>
+        <ol>
+            <todo-item v-for="item in books" v-bind:todo="item"></todo-item>
+        </ol>
+        <button v-on:click="reverserMessage">点击倒序</button>
+    </div>
+
+    <script>
+        ;(function(){
+            Vue.component('todo-item',{
+                props : ['todo'],
+                template: '<li><a v-bind:href="todo.href">{{ todo.name}}</a></li>'
+            });
+            console.log(Vue.component);
+            var app = new Vue({
+                el : '#app',
+                data : {
+                    message : "hello world",
+                }
+            });
+            var app2 = new Vue({
+                el : '#app-2',
+                data : {
+                    message2 : 'You loaded this page on ' + new Date()
+                }
+            });
+            var app3 = new Vue({
+                el : '#app-3',
+                data : {
+                    seen:true ,
+                }
+            });
+            var app4 = new Vue({
+                el : '#app-4',
+                data : {
+                    message : [1,2,3,4,5,6,7].join(''),
+                    books : [
+                        {
+                            name : '西游记',
+                            href : 'https://www.baidu.com'
+                        }, {
+                            name : '水浒传', 
+                            href : 'www.youtube.com'
+                        },{
+                            name : '红楼梦',
+                            href : 'www.youtube.com'
+                        },{
+                            name : '三国演义',
+                            href : 'www.youtube.com'
+                        }
+                    ]
+                },
+                methods : {
+                    reverserMessage : function(){
+                        var me = this;
+                        me.message = me.message.split('').reverse().join('');
+                        me.books = me.books.reverse();
+                    }
+                }
+            });
+
+            document.getElementsByClassName('JS-click-btn')[0].onclick = function(e){
+                e.stopPropagation();
+                app3.seen ? app3.seen = !app3.seen : app3.seen = !app3.seen;
+            }
+        })()
+    </script>
+</body>
+</html>

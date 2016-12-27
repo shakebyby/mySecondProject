@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script src="http://cdn.static.runoob.com/libs/angular.js/1.4.6/angular.min.js"></script>
+    <style>
+        .tc1{
+            color: #ff5b73;
+        }
+        .tc2{
+            color: #1c86c4;
+        }
+        .tc3{
+            color: #3ccb88;
+        }
+        .tc4{
+            color: #e8df1b;
+        }
+        .tc5{
+            color: #b9c474;
+        }
+        .bg1{
+            background-color: #ff5b73;
+        }
+        .bg2{
+            background-color: #1c86c4;
+        }
+        .bg3{
+            background-color:#3ccb88;
+        }
+        .bg4{
+            background-color: #e8df1b;
+        }
+        .bg5{
+            background-color: #b9c474;
+        }
+        .fs10{
+            font-size:10px;
+        }
+        .fs20{
+            font-size: 20px;
+        }
+        .fs30{
+            font-size: 30px;
+        }
+        .fs40{
+            font-size: 40px;
+        }
+        .fs50{
+            font-size: 50px;
+        }
+    </style>
+</head>
+<body ng-app="myApp">
+    <div ng-controller="myCtrl">
+        <input type="text" ng-model="name">
+        <p><span class="{{getClass(name)}}">{{names(name)}}</span></p>
+        <p>{{getFirst(name)}}</p>
+    </div>
+
+
+
+<script>
+    var app=angular.module('myApp',[]);
+    app.service('sf',function(){
+        this.names=function(x){
+            return '定义的class为'+x;
+        };
+        this.getClass=function(x){
+            return x;
+        };
+        this.getFirst=function(x){
+            return '最后一个字是'+x[x.length-1];
+        }
+    });
+    app.controller('myCtrl',function($scope,sf){
+        $scope.name='sfzy';
+        $scope.names=sf.names;
+        $scope.getFirst=sf.getFirst;
+        $scope.getClass=sf.getClass;
+    })
+</script>
+</body>
+</html>

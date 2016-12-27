@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script src="./JS/vue.js"></script>
+    <style>
+        div,p,body,html{
+            margin:0;
+            padding:0;
+            box-sizing:border-box;
+        }
+        .sf-test{
+            min-height:50px;
+            height:50px;
+
+        }
+    </style>
+</head>
+<body>
+    <div id="vueFirst">
+        <p :class = '{sfTest}'><span v-show="showName">{{message}}</span></p>
+        <button v-on:click = 'showNameBth'>点我</button>
+    </div>
+
+
+    <script>
+        var vueFirst = new Vue({
+            el:"#vueFirst",
+            data:{
+                sfTest:'sf-test',
+                showName:true,
+                message:'SFZY',
+            },
+            methods:{
+                showNameBth:function(){
+                    this.showName ? this.showName = false: this.showName = true;
+                }
+            }
+        });
+        console.log(vueFirst.showName);
+        console.log(vueFirst);
+        var i=0,timer;
+        function add(x){
+                i++;
+                console.log(x);console.log(i);
+                if(i == 6) {
+                    clearInterval(timer);
+                    console.log('aaaaaaaa');
+                }
+        }
+        add('sss');
+        timer = setInterval("add('sss')",3000);
+//        var x= 0;
+//        function ad(){
+//            x++;
+//            if(x<=6){
+//                console.log(x);
+//                setTimeout('ad()',1000);
+//            }
+//        }
+//        ad();
+    </script>
+</body>
+</html>

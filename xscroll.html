@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>X-scroll</title>
+    <script src="./src/js/jquery-1.11.2.js"></script>
+    <script src="./src/js/sea.js"></script>
+    <script src="./src/config.js"></script>
+    <style>
+        body,html,section,header,div,ul,li,ol,dd,dt,dl{
+            margin:0;
+            padding:0;
+        }
+        div,ul,li{
+            box-sizing: border-box;
+        }
+        ul,li,ol{
+            list-style: none;
+        }
+        .sf-content{
+            position: absolute;
+            width:280px;
+            height:170px;
+            margin:auto;
+            top:0;
+            left:0;
+            right:0;
+            bottom:0;
+            background-color:#1c86c4
+        }
+        .sf-adv{
+            overflow:hidden;
+        }
+        .sf-adv-images{
+            position: relative;
+        }
+        .sf-adv-images>li{
+            position: absolute;
+            top:0;
+            left:0;
+            opacity: 1;
+        }
+    </style>
+</head>
+<body>
+    <div class="sf-content sf-adv">
+        <ul class="sf-adv-images">
+            <li>
+                <a href="">
+                    <img src="./src/images/ad-car01.jpg" alt="">
+                </a>
+            </li>
+            <li>
+                <a href="">
+                    <img src="./src/images/ad-car02.jpg" alt="">
+                </a>
+            </li>
+            <li>
+                <a href="">
+                    <img src="./src/images/ad-car03.jpg" alt="">
+                </a>
+            </li>
+            <li>
+                <a href="">
+                    <img src="./src/images/ad-car04.jpg" alt="">
+                </a>
+            </li>
+        </ul>
+        <div></div>
+    </div>
+
+    <script>
+        seajs.use('bus/xscroll');
+    </script>
+</body>
+</html>

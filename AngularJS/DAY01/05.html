@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script src="http://cdn.static.runoob.com/libs/angular.js/1.4.6/angular.min.js"></script>
+    <style>
+        body{
+            width:100%;
+            height:100%;
+        }
+        .sf-div{
+            position: absolute;
+            margin:auto;
+            width:800px;
+            height:300px;
+            top:0;
+            left:0;
+            right:0;
+            bottom:0;
+        }
+    </style>
+</head>
+<body ng-app="" data-ng-init="allNum=0;price=0;addNum=0;addPrice=0;nowPrice=0;">
+<div class="sf-div">
+    <div>
+        市值：<input type="text" ng-model="allMoney"><br>
+        数量：<input type="text" ng-model="allNum">
+        加仓数量：<input type="text" ng-model="addNum">
+        <br>
+        价格：<input type="text" ng-model="price">
+        现价：<input type="text" ng-model="nowPrice">
+        加仓价格：<input type="text" ng-model="addPrice">
+        <br>
+    </div>
+    <div>
+        加仓前总价：{{allNum*price}}<br>
+        加仓总价：{{addNum*addPrice}}<br>
+        加仓后总数量：{{allNum-0+(addNum-0)}}<br>
+        加仓后总价格：{{(allNum*price+addNum*addPrice)}}<br>
+        加仓后均价：{{(allNum*price+addNum*addPrice)/(allNum-0+(addNum-0))}}<br>
+        涨跌幅：{{((nowPrice-price)/price)*100+"%"}}
+    </div>
+</div>
+</body>
+</html>

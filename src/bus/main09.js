@@ -5,7 +5,6 @@ define(function(require,exports,module){
     var $=require("jQuery");
     $("[data-dialog]").on("click",function(e){
         e.stopPropagation();
-        e.cancelBubble=true;
         // var str=$(e.target).data().dialog;
         // console.log(str);
         $("#"+$(e.target).data().dialog).addClass("animated slideInUp").css({display:"block"});

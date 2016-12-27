@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script src="http://cdn.static.runoob.com/libs/angular.js/1.4.6/angular.min.js"></script>
+</head>
+<body ng-app="myApp">
+    <div ng-controller="myCtrl">
+        <input type="text" ng-model="firstName"><br>
+        <input type="text" ng-model="lastName"><br>
+        <p>
+            {{firstName}}:{{lastName}}
+        </p>
+    </div>
+    <div ng-controller="myctr2">
+        <div ng-init="opitve=0.2;num=3">
+            {{opitve+num}}<br>
+            <p ng-bind="opitve*num"></p>
+        </div>
+    </div>
+    <div ng-controller="myCtr3">
+        <p>
+            person:{{obj.name}}+{{obj.sex}}+{{obj.age}}
+        </p>
+        <p data-ng-init="person={name:'bug',sex:'man',age:30}">
+            <p data-ng-bind="person.name"></p>
+        </p>
+    </div>
+</body>
+<script>
+    var app=angular.module('myApp',[]);
+    app.controller('myCtrl',function($scope){
+        $scope.firstName="JJ";
+        $scope.lastName="Ftego";
+    })
+    app.controller('myctr2',function($scope){
+        $scope.opitve=2;
+        $scope.num=5;
+    })
+    app.controller("myCtr3",function($scope){
+        var obj={
+            name:'sd',
+            sex:'woman',
+            age:20
+        }
+        $scope.obj=obj;
+    })
+</script>
+</html>

@@ -7,7 +7,7 @@ define(function(require,exports,module){
         $(".sf-navbar>li a").click(function(event) {
             event.stopPropagation();
             event.cancelBubble=true;
-            var target=event.target||event.srcElement;
+            var target = event.target || event.srcElement;
             $("ul li a").removeClass("redB");
             $(target).addClass("redB");
             var index=target.getAttribute("data-title") ;
