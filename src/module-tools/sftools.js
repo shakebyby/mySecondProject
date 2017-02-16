@@ -39,10 +39,10 @@ define(function(require,exports,module){
     console.log(y);//1
    //数组去重
     var isUtil=sf.Util=function(arr){
-       var arr2=[];
-       for(var i=0;i<arr.length;i++){
-           if(arr2.indexOf(arr[i])==-1)arr2.push(arr[i]);
-       }
+        var arr2=[];
+        for(var i=0;i<arr.length;i++){
+            if(arr2.indexOf(arr[i])==-1)arr2.push(arr[i]);
+        }
         return arr2;
     };
     //两个数之间取随机整数

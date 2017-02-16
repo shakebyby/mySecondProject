@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0,user-scalable=0">
+    <title>Title</title>
+    <style>
+        body,section,div,header,footer,ul,li{
+            margin:0;
+            padding:0;
+            box-sizing: border-box;
+        }
+        ul,li{
+            list-style: none;
+        }
+        body{
+            font-size:16px;
+        }
+        header{
+            height:2rem;
+            background-color: #43a5eb;
+        }
+        .sf-fl{
+            float:left;
+        }
+        .main-left{
+            background-color: #ff5b73;
+            padding:1rem;
+            width:25%;
+            min-height:50px;
+            margin-bottom: -5000px;
+            padding-bottom:5000px;
+            text-align:justify;
+        }
+        .main-right{
+            background-color: #3ccb88;
+            padding:5px;
+            width:calc(100% - 25%);
+            margin-bottom: -5000px;
+            padding-bottom:5000px;
+            text-align:justify;
+        }
+        .container{
+            overflow: hidden;
+        }
+        footer{
+            background-color: #ffd7fc;
+        }
+        .sf-buttons{
+            display: flex;
+        }
+        .sf-buttons>li{
+            float:left;
+            width:calc(100% / 3);
+        }
+        .items{
+            display: inline-block;
+            padding:0.5rem 0;
+            width:100%;
+            text-align:center;
+            font-size:2rem;
+        }
+        a{
+            text-decoration: none;
+        }
+        .sf-img01{
+            background-color: #43a5eb;
+        }
+        .sf-img02{
+            background-color: #f583bd;
+        }
+        .items:hover{
+            background-color: #e8df1b;
+        }
+    </style>
+</head>
+<body>
+    <header></header>
+    <div class="container">
+        <section class="main-left sf-fl">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Accusantium, amet corporis dolores hic illo inventore ipsam maxime necessitatibus non nulla omnis quia quos rerum saepe sunt velit voluptatem? Sint, tempora?</section>
+        <section class="main-right sf-fl">
+            <div>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ad architecto blanditiis cumque deleniti
+                dolores ducimus eius illo maiores minima mollitia provident quidem recusandae repellat, sequi sit
+                temporibus voluptatem voluptatibus, voluptatum!
+            </div>
+            <div>Animi commodi dolores explicabo facilis ipsam iusto magnam nobis possimus quaerat quis. Beatae
+                doloribus inventore ipsum maxime repellendus. Atque dolorem dolorum eligendi error excepturi ipsam
+                magnam mollitia nihil sit unde!
+            </div>
+            <div>Dignissimos ipsa odio voluptatem! Architecto aspernatur cupiditate debitis dolore eos ex facere id illo
+                iure laudantium libero necessitatibus nemo, neque odio officia quaerat reiciendis sequi soluta tempore,
+                tenetur vitae voluptates.
+            </div>
+            <div>Adipisci asperiores laudantium nulla quisquam reprehenderit totam, veritatis voluptatibus! A aperiam
+                aspernatur assumenda debitis doloremque ducimus earum eum harum ipsum laboriosam libero, natus nemo nisi
+                odit qui repellat suscipit vitae.
+            </div>
+            <div>Aut blanditiis deserunt doloribus eos nulla officiis quia totam voluptate! Aut, corporis dolor eius
+                obcaecati perferendis quidem sequi voluptatibus! Aliquid consectetur dolorum eius esse excepturi nemo,
+                nulla tenetur voluptas! Dolor.
+            </div>
+        </section>
+    </div>
+    <footer>
+        <ul class="sf-buttons">
+            <li>
+                <a class="items sf-img01" href="javascript:void(0)">点我</a>
+            </li>
+            <li>
+                <a class="items sf-img02" href="javascript:void(0)">新闻</a>
+            </li>
+            <li>
+                <a class="items sf-img01" href="javascript:void(0)">更多</a>
+            </li>
+        </ul>
+    </footer>
+</body>
+</html>

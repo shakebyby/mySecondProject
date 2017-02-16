@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        canvas{
+            border:1px solid #999;
+            position:absolute;
+            margin:auto;
+            left:0;
+            top:0;
+            right:0;
+            bottom:0;
+            width:500px;
+            height:500px;
+        }
+    </style>
+</head>
+<body>
+    <canvas id="canvas"></canvas>
+    <script>
+        var canvas = document.getElementById('canvas');
+        var context = canvas.getContext('2d');
+        var img = new Image();
+        img.src = './image/1.JPG';
+        var images = [
+                './image/1.JPG',
+                './image/2.JPG',
+                './image/3.JPG',
+                './image/4.JPG',
+                './image/5.JPG'
+        ];
+        function People(name){
+            this.name = name;
+            this.images = images;
+            this.firstImg = 0;
+            this.step = -50;
+        }
+        var pOne = new People('p1');
+        context.drawImage(img, pOne.step, 0);
+        setInterval(function(){
+            context.clearRect(0,0,500,500);
+            var img = new Image();
+            pOne.firstImg == 5 && (pOne.firstImg = 0);
+            img.src = pOne.images[pOne.firstImg];
+            pOne.firstImg++;
+            context.drawImage(img,pOne.step,0);
+            pOne.step += 10;
+        },200)
+    </script>
+</body>
+</html>

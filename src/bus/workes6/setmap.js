@@ -48,4 +48,7 @@ define(function (require, module, exports) {
     setObjs.add(NaN);
     setObjs.add(NaN);
     console.log(setObjs);
+
+    var a = new map();
+    a.set(1, 11);
 });

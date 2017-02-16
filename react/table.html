@@ -83,5 +83,36 @@
            </div>
        </div>
    </div>
+   <progress id="p"></progress>
 </body>
+<script>
+    ;(function(win, dom){
+        console.log(this === win);
+        console.log(win === window);
+        console.log(dom === document);
+        console.log(dom.getElementsByTagName('div'));
+        var xhr = new XMLHttpRequest();
+        var progressBar = document.getElementById('p');
+        function func(evt){
+            console.log(evt.type);
+            console.log(evt);
+            console.log(event.lengthComputable);
+            if(event.lengthComputable){
+                progressBar.max = event.total;
+                progressBar.value = event.loaded;//在loadend里在赋值一遍
+            }
+        }
+        xhr.addEventListener('progress', func, false);
+        xhr.addEventListener('load', func, false);
+        xhr.addEventListener('loadstart', func, false);
+        xhr.addEventListener('loadend', func, false);
+        xhr.addEventListener('abort', func, false);
+        xhr.addEventListener('error', func, false);
+        xhr.open('get','http://alinw.alicdn.com/platform/eproject/1.1.8/config.js',true);
+        xhr.send();
+        window.onbeforeunload = function(e){
+            return 'sssss';
+        }
+    })(window, document)
+</script>
 </html>

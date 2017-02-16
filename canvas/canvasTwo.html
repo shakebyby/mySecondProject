@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <link rel="stylesheet" href="./css/sfCanvas.css">
+</head>
+<body>
+    <canvas id="canvas" width = '500px' height="500px">
+
+    </canvas>
+    <input type="color"  id = 'inputColor'/>
+</body>
+<script>
+    var canvas = document.getElementById('canvas');
+    context = canvas.getContext('2d');
+    canvas.addEventListener('mousemove', function(e){
+        var target = e.target;
+        context.clearRect(e.offsetX, e.offsetY, 10, 10);
+//        console.log(e.offsetX, e.offsetY);
+        console.log(e);
+    }, false);
+    document.getElementById('inputColor').addEventListener('change',function(e){
+        var target = e.target;
+        context.fillStyle = target.value;
+        context.fillRect(0,0,500,500);
+    },false)
+</script>
+
+</html>

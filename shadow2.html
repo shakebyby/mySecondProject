@@ -32,6 +32,34 @@
             position:absolute;
             background-color:rgba(0,0,0,0.2);
         }
+        .container{
+            position: absolute;
+            left:0;
+            top:0;
+            bottom:0;
+            right:0;
+            margin:auto;
+            width:100px;
+            height:50px;
+            text-shadow:10px 0px 0px #333333;
+        }
+        .fn-fl{
+            float:left;
+        }
+        .main{
+            width:100px;
+            height:100px;
+            display: inline-block;
+        }
+        .bg1{
+            background-color: #43a5eb;
+        }
+        .bg2{
+            background-color: #ff5b73;
+        }
+        button{
+            display: inline-block;
+        }
     </style>
 </head>
 <body>
@@ -51,12 +79,40 @@
         <div class="shadow-body"></div>
         <div class="shadow-comment"></div>
     </section>
-
-
-
-
+    <section class="container">
+       阿萨德啊啊 <br> 爱的气氛 <br>
+        Lorem ipsum dolor sit amet, consectetur adipisicing elit. Consequatur eaque enim impedit ipsam iste labore natus neque officia quia quibusdam quo quod repudiandae, sapiente sint sit tempore ullam voluptate voluptatibus!
+    </section>
+    <button>asdsad</button>
+    <button>asdsad</button>
+    <button>asdsad</button>
+    <button>asdsad</button>
+    <!--方法一-->
+    <!--<div class="main bg1"></div>&lt;!&ndash;-->
+    <!--&ndash;&gt;<div class="main bg2"></div>-->
+    <!--&lt;!&ndash;方法二&ndash;&gt;-->
+    <!--<div class="main bg1"></div-->
+    <!--&gt;<div class="main bg2"></div>-->
+    <!--方法三-->
+    <div class="main bg1">
+    </div><div class="main bg2"></div>
 </body>
 <script>
     seajs.use("bus/main07");
+</script>
+<script>
+
+    var i = 1000,timer = null;
+    $('.container').css({
+        'text-shadow' : i+'px 0px 0px #333333',
+    },1000);
+    time1 = setInterval(function(){
+        i--;
+        i == 0 && clearInterval(time1);
+        $('.container').css({
+            'text-shadow' : i+'px 0px 0px #333333',
+        },1000);
+    },1)
+
 </script>
 </html>

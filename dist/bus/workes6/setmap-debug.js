@@ -27,5 +27,7 @@ define("bus/workes6/setmap-debug", [], function(require, module, exports) {
     var setObj = new Set;
     setObj.add({}), setObj.add({});
     var setObjs = new Set;
-    setObjs.add(NaN), setObjs.add(NaN), setObjs.add(NaN)
+    setObjs.add(NaN), setObjs.add(NaN), setObjs.add(NaN);
+    var a = new map;
+    a.set(1, 11)
 });
