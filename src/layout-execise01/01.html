@@ -3,6 +3,84 @@
 <head>
     <meta charset="UTF-8">
     <title>零基础HTML编码</title>
+    <script src="../js/jquery-1.11.2.js"></script>
+    <style>
+        .partitionDiv {width:200px; height:66px;}
+        .partitionName, .partitionPara {height:22px; width:100%; font-family:Verdana, Geneva, sans-serif; font-size:12px; line-height:22px;}
+        .partitionBar {width:100%; height:15px; border-radius:3px; border:1px solid #999;}
+        .usedBar {width:0; height:100%;
+            background: -moz-linear-gradient(to right ,#01536d, #1c86c4, #0195ae, #1c86c4,#01536d);
+            background: -ms-linear-gradient(to right , #1565c4, #1c86c4, #51c1c4, #1c86c4,#1565c4);
+            background: linear-gradient(to right , #01536d, #1c86c4, #51c1c4, #1c86c4,#01536d);
+            /*兼容IE8*/
+            filter: progid:DXImageTransform.Microsoft.gradient(GradientType = 1, startColorstr = #1b79c4, endColorstr = #51c1c4);
+        }
+        .father{
+            position: absolute;
+            top:0;
+            left:0;
+            right:0;
+            bottom:0;
+            margin:auto;
+            width:300px;
+            height:50px;
+            overflow: hidden;
+            border:1px solid #ddd;
+        }
+        .child{
+            width:400px;
+            height:50px;
+            position: absolute;
+        }
+        ul,li{
+            list-style: none;
+            margin:0;
+            padding:0;
+        }
+        li{
+            float:left;
+        }
+        a{
+            display: inline-block;
+            text-align: center;
+            text-decoration: none;
+            line-height: 50px;
+            width:50px;
+            background-color: #51c1c4;
+        }
+        a:hover{
+            background-color: #ff5b73;
+        }
+        .big{
+            width:222px;
+            position: relative;
+        }
+        .one{
+            width:100px;
+            height:200px;
+            border:1px solid #000000;
+            display: inline-block;
+        }
+        .two{
+            position: absolute;
+            display: inline-block;
+            border:1px solid #000000;
+            height:90px;
+            right:0;
+            width:100px;
+        }
+        .three{
+            position: absolute;
+            display: inline-block;
+            border:1px solid #000000;
+            height:90px;
+            width:100px;
+            right:0;
+            top:110px;
+        }
+
+    </style>
+    <script src="../js/jquery-1.11.2.js"></script>
 </head>
 <body>
 <h1>网站一级标题</h1>
@@ -166,8 +244,156 @@
     </form>
 </div>
 
+<div id="diskDiv"></div>
+
+<div class="father">
+    <div class="child">
+        <ul class="nav">
+            <li><a href="javascript:void(0)">1</a></li>
+            <li><a href="javascript:void(0)">2</a></li>
+            <li><a href="javascript:void(0)">3</a></li>
+            <li><a href="javascript:void(0)">4</a></li>
+            <li><a href="javascript:void(0)">5</a></li>
+            <li><a href="javascript:void(0)">6</a></li>
+            <li><a href="javascript:void(0)">7</a></li>
+            <li><a href="javascript:void(0)">8</a></li>
+        </ul>
+    </div>
+</div>
+
+<div class="big">
+    <div class="one"></div>
+    <div class="two"></div>
+    <div class="three"></div>
+</div>
+<script>
+    $(function() {
+        $('.big').on('click', function(e){
+            var classNames = ['one','two',"three"];
+            console.log(e.target.className);
+            if(classNames.indexOf(e.target.className) != -1){
+                $(e.target).animate({width : $(e.target).width()*1.5,
+                    height: $(e.target).height()*1.5
+                },2000)
+            }
+        });
+        var lefts = 0;
+        var oneFirst,oneLast,twoFirst, twoLast;
+        oneFirst = $('.father').offset().left;
+        oneLast = oneFirst + $('.nav li a:first').width();
+        twoFirst = oneFirst+250;
+        twoLast = twoFirst + $('.nav li a:last').width();
+        $(window).on('resize', function(e){
+            oneFirst = $('.father').offset().left;
+            oneLast = oneFirst + $('.nav li a:first').width();
+            twoFirst = oneFirst+250;
+            twoLast = twoFirst + $('.nav li a:last').width();
+//            console.log(oneFirst, oneLast);
+//            console.log(twoFirst, twoLast);
+        });
+        $('.child').on('click', function(e){
+            if(e.target.nodeName == 'A'){
+//                console.log(e.clientX);
+//                console.log($(e.target).scrollTop());
+//                console.log($(e.target).parent().prev().html());
+                if(oneFirst <= e.clientX && e.clientX <= oneLast){
+                    if($(e.target).parent().prev().html() != undefined){
+//                        console.log(1);
+                        lefts = lefts + 50;
+                        $('.child').animate({left:lefts+'px'},100);
+                    }
+                }
+                if(twoFirst <= e.clientX && e.clientX <= twoLast){
+                    if($(e.target).parent().next().html() != undefined){
+//                        console.log(1);
+                        lefts = lefts - 50;
+                        $('.child').animate({left:lefts+'px'},100);
+                    }
+                }
+            }
+        });
+
+
+        var lastX = null,
+                lastY = null;
+        var SCROP = 0;
+//        $('.father').on('mousedown',function(){
+//            $(this).on('mousemove',sfzy);
+//        } ).on('mouseleave',function(){
+//            $(this).off('mousemove',sfzy);
+//            $('.child').animate({left:0},100);
+//            SCROP = 0;
+//            console.log(1);
+//        });
+
+        function sfzy(){
+            var curX = event.clientX,
+                    curY = event.clientY,
+                    direction = '';
+            if(lastX == null || lastY == null){
+                lastX = curX;
+                lastY = curY;
+                return ;
+            }
+            if(curX > lastX){
+                direction += 'X右,';
+                SCROP++;
+                $('.child').css({left:SCROP+'px'});
+                console.log('right');
+            }else if(curX < lastX){
+                direction += 'X左,';
+                SCROP--;
+                $('.child').css({left:SCROP+'px'});
+                console.log('left')
+            }else{
+                direction += 'X居中,';
+            }
+            if(curY > lastY){
+                direction += 'Y上';
+            }else if(curY < lastY){
+                direction += 'Y下';
+            }else{
+                direction += 'Y居中';
+            }
+            lastX = curX;
+            lastY = curY;
+        }
 
 
 
+
+    var c = ['C', '24', '100'];
+    var d = ['D', '32', '200'];
+    var partiArray = [c, d];
+
+    var innerDiv = "<div class='partitionDiv'>" +
+            "<div class='partitionName'>&nbsp;<span class='partiName'></span>盘" +
+            "</div><div class='partitionBar'><div class='usedBar'></div></div>" +
+            "<div class='partitionPara'>&nbsp;剩余&nbsp;<span class='remainData'>" +
+            "</span>&nbsp;GB　　共&nbsp;<span class='fullData'></span>&nbsp;GB</div></div>";
+    //遍历分区数组，生成相同数量的容量条效果
+    for(var i=0; i<partiArray.length; i++){
+    $('#diskDiv').append(innerDiv);
+    }
+    //设置磁盘名称
+    $('span.partiName').each(function(i) {
+    $(this).html(partiArray[i][0]);
+    });
+    //设置剩余容量
+    $('span.remainData').each(function(i) {
+    $(this).html(partiArray[i][1]);
+    });
+    //设置磁盘总容量
+    $('span.fullData').each(function(i) {
+    $(this).html(partiArray[i][2]);
+    });
+    //设置已用空间，即容量条的长度
+    $('div.usedBar').each(function(i) {
+    var barWidth = (1-partiArray[i][1]/partiArray[i][2])*100 + '%';
+    //jquery动画效果
+    $(this).animate({width:barWidth},2000);
+    });
+    });
+</script>
 </body>
 </html>

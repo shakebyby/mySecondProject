@@ -3,6 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <title>Title</title>
+    <script src="../src/js/jquery-1.11.2.js"></script>
     <style>
         canvas{
             border:1px solid #999;
@@ -15,11 +16,53 @@
             width:500px;
             height:500px;
         }
+        /*磁盘管理*/
+        .diskManagementTitle{font-size: 12px;color: #015b97;font-weight: bold;}
+        .diskPartition{display: inline-block;padding-left:35px;margin-bottom:20px;margin-right:60px;position:relative;}
+        .diskServer{display:inline-block;position: relative;top: 5px;margin-right: 5px;width:20px;height:20px;background: url("../img/disk_server.png") no-repeat }
+        .diskBook{position:absolute;top:35px;left:-5px;height:25px;width:35px;background: url("../img/disk_book.png") no-repeat}
+        .diskHr{width:100%;margin-top:10px;height:1px;background: #ccc;}
+        .diskPartitionBar{width:100%;height:15px;border-radius: 3px;border: 1px solid #999;}
+        .diskPartitionDiv{width:200px;}
+        .diskDelta{display: inline-block;position:relative;top:3px;left:5px;cursor:pointer;border:7px solid transparent;border-left:7px solid #9cb9c9;}
+        .diskDeltaTop{border:7px solid transparent;border-top:7px solid #9cb9c9;top:6px;}
+        .diskRadius{border-radius: 1000px;}
+        .diskRadiusBar{border-radius:1000px 0 0 1000px;}
+        .diskPartitionDown{color:#666;font-size:12px;}
+        .diskPartitionTitle{margin:10px 0px 5px 0;color:#666;font-size:12px;}
+        .diskUsedBar{border-right:1px solid #5aa6d8; width:0; height:100%;background: -moz-linear-gradient(to right ,#5aa6d8, #bfe4ea);background: -ms-linear-gradient(to right , #5aa6d8, #bfe4ea);background: linear-gradient(to right , #5aa6d8, #bfe4ea);/*兼容IE8*/filter: progid:DXImageTransform.Microsoft.gradient(GradientType = 1, startColorstr = #5aa6d8, endColorstr = #bfe4ea);}
+        .diskUsedBarRed{border-right:2px solid #ec4b50;width:0; height:100%;background: -moz-linear-gradient(to right ,#5aa6d8, #bfe4ea);background: -ms-linear-gradient(to right , #5aa6d8, #bfe4ea);background: linear-gradient(to right , #5aa6d8, #bfe4ea);/*兼容IE8*/filter: progid:DXImageTransform.Microsoft.gradient(GradientType = 1, startColorstr = #5aa6d8, endColorstr = #bfe4ea);}
     </style>
 </head>
 <body>
     <canvas id="canvas"></canvas>
+
+
+    <div class="diskPartition">
+        <div class='diskBook'></div>
+        <div class='diskPartitionTitle'>挂载的磁盘名称{{mountedOn}}</div>
+        <div class='diskPartitionDiv diskRadius'>
+            <div class='diskPartitionBar diskRadius'>
+                <div class="diskUsedBar diskRadiusBar" data-use-percentum = "50%" data-avail = "{{avail}}" data-all = "{{size}}" data-use = "{{used}}"></div>
+            </div>
+        </div>
+        <div class="diskPartitionDown">{{avail}}B可用，共{{size}}B</div>
+    </div>
     <script>
+
+        $('div.diskUsedBar').each(function(i) {
+            var usePercentum = parseInt($(this).data("usePercentum"));
+            if(usePercentum >= 80){
+                $(this).animate({width:$(this).data("usePercentum")},1000);
+                $(this).removeClass('diskUsedBar').addClass('diskUsedBarRed');
+                if(usePercentum == 100){
+                    $(this).removeClass('diskRadiusBar').addClass('diskRadius');
+                }
+            }else{
+                $(this).animate({width:$(this).data("usePercentum")},1000);
+            }
+
+        });
         var canvas = document.getElementById('canvas');
         var context = canvas.getContext('2d');
         var img = new Image();
@@ -47,7 +90,7 @@
             pOne.firstImg++;
             context.drawImage(img,pOne.step,0);
             pOne.step += 10;
-        },200)
+        },100)
     </script>
 </body>
 </html>

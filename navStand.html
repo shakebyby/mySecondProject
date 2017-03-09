@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script src="./src/js/jquery-1.11.2.js"></script>
+    <style>
+        div{
+            box-sizing: border-box;
+        }
+        .container{
+            padding:5px;
+        }
+        .nav{
+            width:100%;
+            overflow: hidden;
+            margin:auto;
+        }
+        ul,li{
+            margin:0;
+            padding:0;
+            list-style: none;
+        }
+        ul{
+            width:2000px;
+        }
+        li{
+            float:left;
+        }
+        a{
+            text-decoration: none;
+            line-height:40px;
+            padding:10px;
+            background-color:#dddddd;
+        }
+        a:hover{
+            background-color: #ff4256;
+        }
+        .active{
+            background-color: #ff4256;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="nav">
+            <ul>
+                <li><a href="javascript:void(0)">asd</a></li>
+                <li><a href="javascript:void(0)">asd</a></li>
+                <li><a data-role="first" href="javascript:void(0)">asd</a></li>
+                <li><a href="javascript:void(0)">asd</a></li>
+                <li><a href="javascript:void(0)">asd</a></li>
+                <li><a href="javascript:void(0)">asd</a></li>
+                <li><a href="javascript:void(0)">asd</a></li>
+                <li><a href="javascript:void(0)">asd</a></li>
+                <li><a href="javascript:void(0)">asd</a></li>
+                <li><a href="javascript:void(0)">asd</a></li>
+                <li><a href="javascript:void(0)">asd</a></li>
+                <li><a href="javascript:void(0)">asd</a></li>
+                <li><a href="javascript:void(0)">asd</a></li>
+                <li><a href="javascript:void(0)">asd</a></li>
+                <li><a href="javascript:void(0)">asd</a></li>
+                <li><a href="javascript:void(0)">asd</a></li>
+                <li><a href="javascript:void(0)">asd</a></li>
+                <li><a href="javascript:void(0)">asd</a></li>
+                <li><a href="javascript:void(0)">asd</a></li>
+                <li><a href="javascript:void(0)">asd</a></li>
+                <li><a href="javascript:void(0)">asd</a></li>
+                <li><a href="javascript:void(0)">asd</a></li>
+                <li><a href="javascript:void(0)">asd</a></li>
+                <li><a href="javascript:void(0)">asd</a></li>
+                <li><a href="javascript:void(0)">asd</a></li>
+                <li><a href="javascript:void(0)">asd</a></li>
+                <li><a href="javascript:void(0)">asd</a></li>
+                <li><a href="javascript:void(0)">asd</a></li>
+                <li><a href="javascript:void(0)">asd</a></li>
+                <li><a href="javascript:void(0)">asd</a></li>
+                <li><a href="javascript:void(0)">asd</a></li>
+                <li><a href="javascript:void(0)">asd</a></li>
+                <li><a href="javascript:void(0)">asd</a></li>
+                <li><a data-role="last" href="javascript:void(0)">asd</a></li>
+                <li><a href="javascript:void(0)">asd</a></li>
+                <li><a href="javascript:void(0)">asd</a></li>
+            </ul>
+        </div>
+    </div>
+    <script>
+        var lastX = null,
+                lastY = null;
+//        console.log($('.nav')[0].scrollWidth);
+        var SCROP = 0;
+            $('.nav').on('click',function(e){
+                console.log(e.target);
+//                $(this).off('mousemove');
+                var $allA = $("ul").find('a');
+                $allA.removeClass('active');
+                $(e.target).addClass('active');
+                if($(e.target).data('role') == 'first'){
+                    $(this).animate({scrollLeft: 0},100);
+                    SCROP = 0;
+                }else if($(e.target).data('role') == 'last'){
+                    $(this).animate({scrollLeft: 100},100);
+                    SCROP = 0;
+                }
+            });
+                $('.nav').on('mousemove',function(e){
+                    console.log($(this).scrollLeft());
+//                $('.nav').scrollTo(20);
+                    var curX = event.clientX,
+                            curY = event.clientY,
+                            direction = '';
+                    // console.info(event);
+                    // console.info(event.clientX);
+                    // console.info(event.clientY);
+                    // 初始化坐标
+                    if(lastX == null || lastY == null){
+                        lastX = curX;
+                        lastY = curY;
+                        return ;
+                    }
+                    if(curX > lastX){
+                        direction += 'X右,';
+                        SCROP  -= 2;
+                        $(this).scrollLeft(SCROP);
+                    }else if(curX < lastX){
+                        direction += 'X左,';
+                        SCROP += 2;
+                        $(this).scrollLeft(SCROP);
+                    }else{
+                        direction += 'X居中,';
+                    }
+                    if(curY > lastY){
+                        direction += 'Y上';
+                    }else if(curY < lastY){
+                        direction += 'Y下';
+                    }else{
+                        direction += 'Y居中';
+                    }
+                    lastX = curX;
+                    lastY = curY;
+//                console.info(direction);
+                })
+
+    </script>
+</body>
+</html>
